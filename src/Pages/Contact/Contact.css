@@ -1,0 +1,27 @@
+.contact-container p{
+    color: grey;
+}
+.contact-img img{
+    width: 80%;
+    height: 600px;
+    object-fit: cover;
+}
+.input-field input, textarea{
+    width: 100%;
+    color: black;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(87, 86, 86);  
+}
+.submit-input input{
+    border-radius: 3px;
+    background-color: #105652;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    width: auto;
+    border: 0;
+    color: white;
+    cursor: pointer;
+}

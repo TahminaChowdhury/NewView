@@ -1,0 +1,11 @@
+.nav a{
+    text-decoration: none;
+    color: black;
+    margin-left: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .25em;
+}
+.navbar{
+    height: 90px;
+}
