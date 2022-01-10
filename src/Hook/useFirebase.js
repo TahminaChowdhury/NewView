@@ -1,33 +1,150 @@
-import React from 'react';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import { useState } from 'react';
+import { useEffect } from 'react';
+import firebaseInit from '../Firebase/firebaseInit';
+
+firebaseInit();
 
 const useFirebase = () => {
+
     const [user, setUser] = useState({});
-    const [error, setError] = useState("");
+    const [error, setError] = useState('');
+    const [isLoading, setisLoading] = useState(true);
 
-    // Auth Providers
-    const googleProvider = new GoogleAuthProvider();
 
+    // auth
     const auth = getAuth();
 
-    const signInWithGoogle = () => {
+    // providers
+    const googleProvider = new GoogleAuthProvider();
+    const facebookProvider = new FacebookAuthProvider();
+
+
+
+    // signin with email and password
+    
+    const signupWithEmailAndPassword = (name ,email, password, navigate) => {
+
+        setisLoading(true);
+
+        createUserWithEmailAndPassword(auth, email, password)
+
+        .then((result) => {
+           console.log(result.user)
+            const newUser = {email, displayName: name};
+            setUser(newUser);
+            
+            updateProfile(auth.currentUser, {
+                displayName: name
+              }).then(() => {
+            
+              }).catch((error) => {
+                
+              });
+
+              navigate.replace('/home')
+              setError('');
+        })
+        .catch((error) => {
+
+            setError(error.message);
+
+        }).finally(() => setisLoading(false));
+    };
+
+
+    // sign in with email and password
+
+    const loginWithEmailAndPassword = (email, password, location , history) => {
+
+        setisLoading(true);
+
+        signInWithEmailAndPassword(auth, email, password)
+
+        .then((userCredential) => {
+            const user = userCredential.user;
+            setUser(user);
+
+            const { from } = location.state || { from: { pathname: "/" }};
+
+            history.replace(from);
+            setError('');
+        })
+        .catch((error) => {
+            setError(error.message);
+        }).finally(() => setisLoading(false));
+    }
+
+    // log in with google 
+
+    const loginWithGoogle = (location , history) => {
+        
+        setisLoading(true);
+
         signInWithPopup(auth, googleProvider)
+
+        .then((result) => {
+            const user = result.user;
+            setUser(user);
+
+           
+            const { from } = location.state || { from: { pathname: "/" }};
+
+            history.replace(from);
+            setError("")
+
+        }).catch((error) => {
+
+            setError(error.message);
+
+        }).finally(() => setisLoading(false));
+    };
+
+    // login with facebook
+
+    const loginWithFacebook = () => {
+        signInWithPopup(auth, facebookProvider)
             .then((result) => {
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                const user = result.user;
-         
-            }).catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                const email = error.email;
-                const credential = GoogleAuthProvider.credentialFromError(error);
+
+
+            })
+            .catch((error) => {
+                
             });
     }
 
-    return {
-        signInWithGoogle
+
+    // logout
+
+    const logout = () => {
+        signOut(auth).then(() => {
+            
+          }).catch((error) => {
+            
+          });
+    }
+    // observer
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user);
+            } else {
+              setUser({});
+            }
+            setisLoading(false);
+          });
+    },[])
+
+    return{
+        user,
+        error,
+        isLoading,
+        signupWithEmailAndPassword,
+        loginWithEmailAndPassword,
+        loginWithGoogle,
+        loginWithFacebook,
+        logout
     };
 };
 

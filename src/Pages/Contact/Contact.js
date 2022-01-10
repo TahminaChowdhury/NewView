@@ -3,7 +3,6 @@ import { Alert, Container } from 'react-bootstrap';
 import NavBar from '../Shared/NavBar/NavBar';
 import './Contact.css'
 import emailjs from '@emailjs/browser';
-import img from '../../images/chinese-asian-reception-team-hotel-front-desk-luxury-welcoming-guests-typical-gesture-sign-good-service-37384865.jpg'
 import { useState } from 'react';
 
 const Contact = () => {
@@ -26,10 +25,14 @@ const Contact = () => {
         <>
             <NavBar></NavBar>
             <Container>
+            <div className='col-12 contact-bg'>
+
+                </div>
                 <div className='row contact-container my-5'>
+                    
                     <div className='col-sm-12 col-md-6 col-lg-6'>
                         <div className='contact-img'>
-                            <img src={img} alt="" />
+                            <img src="" alt="" />
                         </div>
                     </div>
                     <div className='col-sm-12 col-md-6 col-lg-6'>

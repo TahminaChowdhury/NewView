@@ -1,3 +1,11 @@
+.contact-bg{
+    background-image: url('../../images/hotel-receptionist-check-man-giving-key-card_79405-1509.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
 .contact-container p{
     color: grey;
 }

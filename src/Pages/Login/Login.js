@@ -1,8 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './SignUp.css'
+import { useForm } from 'react-hook-form';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useAuth from '../../Hook/useAuth';
+import './Login.css'
 
-const Signup = () => {
+
+const Login = () => {
+    const { user, loginWithGoogle, loginWithFacebook, loginWithEmailAndPassword, error } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    
+    const handleLoginWithGoogle = () => {
+        loginWithGoogle(location, navigate)
+    };
+    const { handleSubmit } = useForm();
+
+    const onSubmit = data => {
+        loginWithEmailAndPassword(data.email, data.password, location, navigate)
+        console.log(data)
+    };
     return (
         <div className='form-container'>
             <div className='row'>
@@ -10,9 +26,9 @@ const Signup = () => {
                     <div className='form-content'>
                         <div className='form-items mx-5'>
                             <div>
-                                <h3 className='text-center'>Sign Up</h3>
+                                <h3 className='text-center'>Login</h3>
                             </div>
-                            <form>
+                            <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className='mt-3'>
                                     <p>
                                         <label>
@@ -34,10 +50,10 @@ const Signup = () => {
                                     </p>
                                     <p>Forgot password?</p>
                                 </div>
-                                <button className='signIn-btn px-3 py-2 rounded-pill mt-4'>Sign Up</button>
+                                <button className='signIn-btn px-3 py-2 rounded-pill mt-4'>Login</button>
                             </form>
                         </div>
-                        <p className='text-center mt-4'>Or Sign Up Using</p>
+                        <p className='text-center mt-4'>Or Login Using</p>
                         <div className='mt-3 mx-5 d-flex justify-content-center'>
 
                             <div className='mb-3'>
@@ -49,8 +65,8 @@ const Signup = () => {
                             </div>
                         </div>
                         <div className='mx-5 px-4'>
-                            <span>Already have an account?</span>
-                            <span><Link to="/login">Login</Link></span>
+                            <span>Don't have an account?</span>
+                            <span><Link to="/signup">Sign Up</Link></span>
                         </div>
                     </div>
                 </div>
@@ -59,4 +75,5 @@ const Signup = () => {
     );
 };
 
-export default Signup;
+export default Login;
+
