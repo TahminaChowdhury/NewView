@@ -21,19 +21,19 @@
 .form-items input{
     border: 0;
     outline: 0;
-    border-bottom: 2px solid #A3DA8D;
+    border-bottom: 2px solid #01937C;
     width: 300px;
     padding-top: 10px;
 }
 .form-content a{
     text-decoration: none;
-    color: #A3DA8D;
+    color: #01937C;
 }
 .signIn-btn{
     border: none;
     width: 300px;
-    background-color: #A3DA8D;
-    color: black;
+    background-color: #01937C;
+    color: white;
 }
 .social-btn{
     border: none;

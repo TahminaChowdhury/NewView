@@ -1,5 +1,5 @@
 .card{
-    background-color: #F2FFE9;
+    background-color: #ecfaf8;
     width: 80%;
     height: 500px;
     position: relative;
@@ -33,7 +33,9 @@
 .price{
     font-family: Cormorant,serif;
 }
-.book-now{
+.details-btn{
     border: none;
-    background-color: #f5fafa;
+    background-color: #ecfaf8;
+    border-bottom: 1px solid black;
+    letter-spacing: 2px;
 }

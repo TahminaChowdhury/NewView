@@ -16,6 +16,7 @@ const Rooms = () => {
         <div className='my-5'>
             <Container>
                 <div className='row'>
+                    <h1 className='my-5'>Our Rooms</h1>
                     {
                         rooms.map(room => <Room room={room}></Room>)
                     }

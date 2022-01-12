@@ -23,7 +23,7 @@ const Room = ({room}) => {
                     </div>
                     <p>{size}m2 / {accomodation}</p>
                     <p>{description.slice(0, 100)}...</p>
-                    <Link to={`/roomdetails/${id}`} className='book-now'>ROOM DETAIL</Link>
+                    <Link to={`/roomdetails/${id}`} className='details-btn'>ROOM DETAILS</Link>
                 </div>
             </div>
         </div>
