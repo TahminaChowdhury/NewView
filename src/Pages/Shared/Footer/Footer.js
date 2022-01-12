@@ -5,11 +5,11 @@ const Footer = () => {
     return (
         <footer>
             <div className="container">
-                <div className="row d-flex justify-content-between mt-5 pt-5">
+                <div className="row d-flex justify-content-between mt-5 pt-5  ">
                     <div className="col-sm-12 col-md-3 col-lg-3">
                         <div className=" text-start">
                             <h4>About Us</h4>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, obcaecati hic dolor soluta exercitationem iure!</p>
+                           
                         </div>
                     </div>
 

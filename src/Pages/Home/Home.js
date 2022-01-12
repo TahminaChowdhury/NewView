@@ -3,6 +3,7 @@ import './Home.css'
 import NavBar from '../Shared/NavBar/NavBar';
 import Hero from './Hero/Hero'
 import Rooms from './Rooms/Rooms';
+import Footer from '../Shared/Footer/Footer';
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
           <NavBar></NavBar>
           <Hero></Hero>
           <Rooms></Rooms>
+          <Footer></Footer>
         </div>
     );
 };
