@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hook/useAuth';
 import './Login.css'
+import google from '../../images/download (1).png'
+import facebook from '../../images/download.png'
 
 
 const Login = () => {
@@ -17,7 +19,6 @@ const Login = () => {
 
     const onSubmit = data => {
         loginWithEmailAndPassword(data.email, data.password, location, navigate)
-        console.log(data)
     };
     return (
         <div className='form-container'>
@@ -57,11 +58,11 @@ const Login = () => {
                         <div className='mt-3 mx-5 d-flex justify-content-center'>
 
                             <div className='mb-3'>
-                                <button className='regular-btn px-3 py-2 rounded-pill '></button>
+                                <button onClick={handleLoginWithGoogle} className='social-btn'><img src={google} alt="" /></button>
 
                             </div>
                             <div>
-                                <button className='regular-btn px-3 py-2 rounded-pill'></button>
+                                <button className='social-btn'><img src={facebook} alt="" /></button>
                             </div>
                         </div>
                         <div className='mx-5 px-4'>

@@ -1,5 +1,9 @@
 .form-container{
-    background-color: #105652;
+    background-image: url('../../images/27865707f3225d1ab445181dc549d82c.jpg'), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     width: 100%;
     min-height: 100vh;
 }
@@ -17,20 +21,26 @@
 .form-items input{
     border: 0;
     outline: 0;
-    border-bottom: 2px solid #105652;
+    border-bottom: 2px solid #4AA96C;
     width: 300px;
     padding-top: 10px;
 }
 .form-content a{
     text-decoration: none;
+    color: #4AA96C;
 }
 .signIn-btn{
     border: none;
     width: 300px;
-    background-color: #105652;
+    background-color: #4AA96C;
     color: white;
 }
-.regular-btn {
+.social-btn{
     border: none;
     background-color: white;
+}
+.social-btn img{
+    width: 30px;
+    height: 100%;
+    object-fit: cover;
 }

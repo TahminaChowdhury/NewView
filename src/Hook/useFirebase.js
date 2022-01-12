@@ -55,7 +55,7 @@ const useFirebase = () => {
 
     // sign in with email and password
 
-    const loginWithEmailAndPassword = (email, password, location , history) => {
+    const loginWithEmailAndPassword = (email, password, location , navigate) => {
 
         setisLoading(true);
 
@@ -67,7 +67,7 @@ const useFirebase = () => {
 
             const { from } = location.state || { from: { pathname: "/" }};
 
-            history.replace(from);
+            navigate(from, { replace: true });
             setError('');
         })
         .catch((error) => {
@@ -77,7 +77,7 @@ const useFirebase = () => {
 
     // log in with google 
 
-    const loginWithGoogle = (location , history) => {
+    const loginWithGoogle = (location , navigate) => {
         
         setisLoading(true);
 
@@ -90,7 +90,7 @@ const useFirebase = () => {
            
             const { from } = location.state || { from: { pathname: "/" }};
 
-            history.replace(from);
+            navigate(from, { replace: true });
             setError("")
 
         }).catch((error) => {

@@ -8,7 +8,7 @@ import Room from '../Room/Room';
 const Rooms = () => {
     const [rooms, setRooms] = useState([]);
     useEffect(() => {
-        fetch('./fakedata.json')
+        fetch('https://pacific-sea-24561.herokuapp.com/rooms')
             .then(res => res.json())
             .then(data => setRooms(data))
     }, [])

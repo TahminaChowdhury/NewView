@@ -1,5 +1,5 @@
 .card{
-    background-color: #fff3e0;
+    background-color: #F2FFE9;
     width: 80%;
     height: 500px;
     position: relative;
@@ -35,6 +35,5 @@
 }
 .book-now{
     border: none;
-    background-color: #fff1d8;
-    letter-spacing: .25rem;
+    background-color: #f5fafa;
 }
