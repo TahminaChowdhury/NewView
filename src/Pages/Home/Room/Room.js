@@ -1,30 +1,26 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Room.css'
 
 
 
+const Room = ({ room }) => {
 
-
-
-const Room = ({room}) => {
-    const {id,name, description, size, price, accomodation, img} = room;
+    const { _id, name, description, size, price, accomodation, img } = room;
 
     return (
-        <div className='col-sm-12 col-md-6 col-lg-6 my-5 py-5'>
-            <div className='card'>
-                <div className='card-img'>
-                    <img src={img} alt="" className='img-fluid' />
+        <div className='card mb-5'>
+            <div className='card-img'>
+                <img src={img} alt="" className='img-fluid' />
+            </div>
+            <div className='card-details mx-4 mt-3'>
+                <div className='d-flex justify-content-between'>
+                    <h4>{name}</h4>
+                    <h3 className='price'>$ {price}</h3>
                 </div>
-                <div className='card-details mx-4 mt-3'>
-                    <div className='d-flex justify-content-between'>
-                        <h4>{name}</h4>
-                        <h3 className='price'>$ {price}</h3>
-                    </div>
-                    <p>{size}m2 / {accomodation}</p>
-                    <p>{description.slice(0, 100)}...</p>
-                    <Link to={`/roomdetails/${id}`} className='details-btn'>ROOM DETAILS</Link>
-                </div>
+                <p>{size}m2 / {accomodation}</p>
+                <p>{description.slice(0, 100)}...</p>
+                <Link to={`/roomdetails/${_id}`} className='details-btn'>ROOM DETAILS</Link>
             </div>
         </div>
     );

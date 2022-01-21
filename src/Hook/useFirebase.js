@@ -9,7 +9,7 @@ const useFirebase = () => {
 
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
-    const [isLoading, setisLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
 
     // auth
@@ -25,7 +25,7 @@ const useFirebase = () => {
     
     const signupWithEmailAndPassword = (name ,email, password, navigate) => {
 
-        setisLoading(true);
+        setLoading(true);
 
         createUserWithEmailAndPassword(auth, email, password)
 
@@ -49,7 +49,7 @@ const useFirebase = () => {
 
             setError(error.message);
 
-        }).finally(() => setisLoading(false));
+        }).finally(() => setLoading(false));
     };
 
 
@@ -57,7 +57,7 @@ const useFirebase = () => {
 
     const loginWithEmailAndPassword = (email, password, location , navigate) => {
 
-        setisLoading(true);
+        setLoading(true);
 
         signInWithEmailAndPassword(auth, email, password)
 
@@ -72,14 +72,14 @@ const useFirebase = () => {
         })
         .catch((error) => {
             setError(error.message);
-        }).finally(() => setisLoading(false));
+        }).finally(() => setLoading(false));
     }
 
     // log in with google 
 
     const loginWithGoogle = (location , navigate) => {
         
-        setisLoading(true);
+        setLoading(true);
 
         signInWithPopup(auth, googleProvider)
 
@@ -97,7 +97,7 @@ const useFirebase = () => {
 
             setError(error.message);
 
-        }).finally(() => setisLoading(false));
+        }).finally(() => setLoading(false));
     };
 
     // login with facebook
@@ -132,14 +132,14 @@ const useFirebase = () => {
             } else {
               setUser({});
             }
-            setisLoading(false);
+            setLoading(false);
           });
     },[])
 
     return{
         user,
         error,
-        isLoading,
+        loading,
         signupWithEmailAndPassword,
         loginWithEmailAndPassword,
         loginWithGoogle,

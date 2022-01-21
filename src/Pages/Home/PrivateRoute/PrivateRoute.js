@@ -1,12 +1,18 @@
 import React from 'react';
-import { Navigate , Route, useLocation } from 'react-router';
+import { Spinner } from 'react-bootstrap';
+import { Navigate, Route, useLocation } from 'react-router';
 import useAuth from '../../../Hook/useAuth';
 
 const PrivateRoute = ({ children }) => {
-    const { user, isLoading } = useAuth();
+    const { user, loading } = useAuth();
     const location = useLocation();
+    if (loading) {
+        return <div className='text-center'>
+            <Spinner animation="grow" />
+        </div>
+    }
 
-    return user?.email ? children : <Navigate to ="/login" state={{ from: location }}/>
+    return user?.email ? children : <Navigate to="/login" state={{ from: location }} />
 };
 
 export default PrivateRoute;

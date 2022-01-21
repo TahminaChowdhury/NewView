@@ -1,42 +1,51 @@
 const data = [
     {
-        id: 1,
         name: "Superior Room",
-        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, quos nulla praesentium vero reprehenderit labore assumenda quasi autem blanditiis delectus laudantium sed dolores sint quod laborum quaerat ab in. Commodi?",
+        description: "Decorated in a modern style, our Superior Rooms offer free WiFi, 32-inch LCD TVs, DVD players, writing desks and in-room tea and coffee making facilities. Our bathroom features walk-in rain showers and hairdryers.",
         accomodation: "2 adults 1 children",
         size: 30,
         price: 199,
-        img: "https://i.ibb.co/f9YyvqV/front-view-room-with-bed-modern-wooden-night-tables-mockup-176382-1962.jpg",
-        aminities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
+        img: "https://i.ibb.co/B3dD84V/111-Lexow-Ave-Aug18-1074.jpg",
+        aminities: [
+            {
+                img: "https://i.ibb.co/JC1rm3v/balcony.png",
+                name: "Balcony or Terrace"
+            },
+            {
+                img: "https://i.ibb.co/JC1rm3v/balcony.png",
+                name: "Flat Screen TV"
+            },
+            {
+                img: "https://i.ibb.co/JC1rm3v/balcony.png",
+                name: "Telephone"
+            },
+        ]
     },
     {   
-        id: 2,
         name: "Signature room",
-        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, quos nulla praesentium vero reprehenderit labore assumenda quasi autem blanditiis delectus laudantium sed dolores sint quod laborum quaerat ab in. Commodi?",
+        description: "Our Signature Rooms offer free WiFi, 32-inch LCD TVs, DVD players, writing desks and in-room tea and coffee making facilities. Our bathroom features walk-in rain showers and hairdryers.",
         accomodation: "3 adults 2 children",
         size: 70,
         price: 299,
-        img: "https://i.ibb.co/g4vYR7L/picture-frame-mockup-psd-bright-clean-modern-bedroom-53876-130042.jpg",
+        img: "https://i.ibb.co/dt7wKJm/Modern-interior-of-bedroom-with-beige-blue-and-yellow-colors-3d-render.jpg",
         aminities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
     },
     {
-        id: 3,
         name: "Deluxe room",
-        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, quos nulla praesentium vero reprehenderit labore assumenda quasi autem blanditiis delectus laudantium sed dolores sint quod laborum quaerat ab in. Commodi?",
+        description: "Deluxe rooms, are modern decorated, can accommodate up to 3 adults and 1 children, totally soundproofed and equipped with high tech comforts such as high speed internet access, USB ports , smart TV, room cleaning touch system and private hydromassage bathtub.",
         accomodation: "3 adults 1 children",
         size: 50,
         price: 399,
-        img: "https://i.ibb.co/DK6jYPd/modern-bedroom-mockup-with-decorative-elements-176382-1984.jpg",
+        img: "https://i.ibb.co/PgV9YBV/puuwai-design-build-kukuiula-kauai-poipu-ethan-tweedie-photography-architectural-photography-3.jpg",
         aminities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
     },
     {
-        id: 4,
         name: "Luxury Suite room",
-        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, quos nulla praesentium vero reprehenderit labore assumenda quasi autem blanditiis delectus laudantium sed dolores sint quod laborum quaerat ab in. Commodi?",
+        description: "Large, luxurious bath with soaking tub and separate shower.Additional half bath off of living area.Rainforest shower heads and signature Asprey bath products",
         accomodation: "4 adults 2 children",
         size: 120,
         price: 499,
-        img: "https://i.ibb.co/wr7hj9z/realistic-modern-double-bedroom-with-furniture-frame-176382-437-1.jpg",
+        img: "https://i.ibb.co/5RXvgCt/HD-wallpaper-luxury-tropical-modern-contemporary-bedroom-with-sea-view-polynesia-polynesia-bedroom-s.jpg",
         aminities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
     }
 ]

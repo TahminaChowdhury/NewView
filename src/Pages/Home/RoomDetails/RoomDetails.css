@@ -1,0 +1,7 @@
+.roomDetails-container{
+    background-color: #064635;
+    max-height: 650px;
+}
+.room-name{
+    text-transform: uppercase;
+}
