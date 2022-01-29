@@ -9,7 +9,7 @@ const Room = ({ room }) => {
     const { _id, name, description, size, price, accomodation, img } = room;
 
     return (
-        <div className='card mb-5'>
+        <div className='card mt-5 mb-3'>
             <div className='card-img'>
                 <img src={img} alt="" className='img-fluid' />
             </div>
@@ -20,8 +20,9 @@ const Room = ({ room }) => {
                 </div>
                 <p>{size}m2 / {accomodation}</p>
                 <p>{description.slice(0, 100)}...</p>
-                <Link to={`/roomdetails/${_id}`} className='details-btn'>ROOM DETAILS</Link>
+                <Link to={`/roomdetails/${_id}`} className='details-btn' style={{color: "#01937C"}}>ROOM DETAILS +</Link>
             </div>
+            
         </div>
     );
 };

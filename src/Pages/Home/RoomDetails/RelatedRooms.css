@@ -1,0 +1,17 @@
+.rooms-img{
+    position: relative;
+}
+.rooms-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.bookNow-btn{
+    position: absolute;
+    left: 230px;
+    bottom: -20px;
+    border: 0;
+    outline: 0;
+    color: black;
+    background-color: #F5F5F5;
+}

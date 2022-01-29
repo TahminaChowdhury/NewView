@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
+import React from 'react';
 import BookingForm from './BookingForm/BookingForm';
 import Calender from './Calender/Calender';
 
 import './RoomReservation.css'
 
 const RoomReservation = () => {
-    const [value, onChange] = useState(new Date());
+  
     return (
-        <Container>
-            <div className='row'>
+        <div>
+            <div className='row my-5'>
                 <div className='col-sm-12 col-md-8 col-lg-8'>
-                    <Calender value={value} onChange={onChange}></Calender>
+                    <h3 className='mb-5'>Availability</h3>
+                    <Calender></Calender>
                 </div>
                 <div className='col-sm-12 col-md-4 col-lg-4'>
-                    <BookingForm value={value}></BookingForm>
+                    <BookingForm></BookingForm>
                 </div>
             </div>
-        </Container>
+        </div>
     );
 };
 

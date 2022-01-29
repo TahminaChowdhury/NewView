@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import {Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useAuth from '../../../Hook/useAuth';
 
 import './NavBar.css'
@@ -8,10 +8,10 @@ import './NavBar.css'
 const NavBar = () => {
     const { user, logout } = useAuth();
     return (
-        <div className='bg-img'>
-            <Navbar bg="white" expand="lg">
+        <div className='nav-container'>
+            <Navbar expand="lg">
                 <Container>
-                    <Navbar.Brand href="#">The New view</Navbar.Brand>
+                    <Navbar.Brand href="#" className='text-dark'>THE NEW VIEW</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -28,7 +28,7 @@ const NavBar = () => {
                                 user?.email ?
                                     <div>
                                         <button onClick={logout}
-                                            className='logout-btn px-3 py-2 rounded-pill ms-5'>LOGOUT</button>
+                                            className='logout-btn px-3 py-2 ms-5'>LOGOUT</button>
                                         <img
                                             src={
                                                 user.photoURL

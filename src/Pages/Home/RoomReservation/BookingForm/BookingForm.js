@@ -2,7 +2,7 @@ import React from 'react';
 import './BookingForm.css'
 import { useForm } from "react-hook-form";
 
-const BookingForm = ({ value }) => {
+const BookingForm = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
     return (
@@ -15,7 +15,7 @@ const BookingForm = ({ value }) => {
                             Check-in-Date
                             <br />
                             <span>
-                                <input type="text" />
+                                <input type="date" {...register("check-in-date")}/>
                             </span>
                         </label>
                     </p>
@@ -24,7 +24,7 @@ const BookingForm = ({ value }) => {
                             Check-out-Date
                             <br />
                             <span>
-                                <input type="text" />
+                                <input type="date" {...register("check-out-date")}/>
                             </span>
                         </label>
                     </p>
@@ -33,7 +33,7 @@ const BookingForm = ({ value }) => {
                             Rooms
                             <br />
                             <span>
-                                <select name="select" className='room-filed'>
+                                <select {...register("room")} className='room-filed'>
                                     <option value="1 Room" selected>1 Room</option>
                                     <option value="2 Room" >2 Room</option>
                                     <option value="3 Room">3 Room</option>
@@ -46,7 +46,7 @@ const BookingForm = ({ value }) => {
                             Adults
                             <br />
                             <span>
-                                <select name="select" className='option-field'>
+                                <select {...register("adults")} className='option-field'>
                                     <option value="1 Adults" selected>1 Adults</option>
                                     <option value="2 Adults">2 Adults</option>
                                     <option value="3 Adults">3 Adults</option>
@@ -59,7 +59,7 @@ const BookingForm = ({ value }) => {
                             Children
                             <br />
                             <span>
-                                <select name="select" className='option-field'>
+                                <select {...register("children")}className='option-field'>
                                     <option value="0 Children" selected>0 Children</option>
                                     <option value="1 Children" >1 Children</option>
                                     <option value="2 Children">2 Children</option>
