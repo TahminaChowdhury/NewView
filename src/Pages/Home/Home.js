@@ -4,6 +4,7 @@ import Rooms from './Rooms/Rooms';
 import Footer from '../Shared/Footer/Footer';
 import NavBar from '../Shared/NavBar/NavBar';
 import Banner from './Banner/Banner';
+import AboutUs from './AboutUs/AboutUs';
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
           <NavBar></NavBar>
           <Banner></Banner>
+          <AboutUs></AboutUs>
           <Rooms></Rooms>
           <Footer></Footer>
         </div>

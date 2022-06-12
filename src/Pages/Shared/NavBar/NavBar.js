@@ -20,7 +20,7 @@ const NavBar = () => {
                             navbarScroll
                         >
                             <Link to="/home">HOME</Link>
-                            <Link to="/rooms">ROOMS</Link>
+                            <Link to="/allrooms">ROOMS</Link>
                             <Link to="/aboutus">ABOUT US</Link>
                             <Link to="/gallery">GALLERY</Link>
                             <Link to="/contact">CONTACT</Link>

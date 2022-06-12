@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import NavBar from '../../Shared/NavBar/NavBar';
-import RoomReservation from '../RoomReservation/RoomReservation'
+import NavBar from '../../../Shared/NavBar/NavBar';
+import RoomReservation from '../../RoomReservation/RoomReservation'
 import RelatedRooms from './RelatedRooms';
 import './RoomDetails.css'
 const RoomDetails = () => {

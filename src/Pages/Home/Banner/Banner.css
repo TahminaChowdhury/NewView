@@ -10,7 +10,6 @@
 .carousel-caption{
     margin-bottom: 250px;
 }
-
 .form{
     background-color: #F5F5F5;
     height: 150px;
@@ -53,7 +52,15 @@
 .bookingform-container{
     display: none;
 }
-
+.aboutUs-container {
+    margin-top: 200px;
+}
+.read-more{
+    outline: 0;
+    background-color: white;
+    font-weight: 600;
+    border: 1px solid rgba(0,0,0,.6);
+}
 @media (max-width: 500px) {
     .form{
         display: none;

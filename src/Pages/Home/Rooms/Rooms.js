@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
-import Room from '../Room/Room';
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useRef } from 'react';
 import './Rooms.css'
+import Room from './Room/Room';
 
       
 

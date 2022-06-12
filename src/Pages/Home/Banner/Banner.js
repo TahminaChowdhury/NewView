@@ -6,6 +6,7 @@ import img1 from '../../../images/puuwai_design_build_kukuiula_kauai_poipu_ethan
 import img2 from '../../../images/111LexowAve_Aug18-1074.jpg'
 import img3 from '../../../images/istockphoto-1303674434-170667a.jpg'
 import BookingForm from '../RoomReservation/BookingForm/BookingForm';
+import { Link } from 'react-router-dom';
 
 
 
@@ -42,9 +43,10 @@ const Banner = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
-            <div className='mx-5 form'>
+            <div className='mx-5'>
+                <div className=''>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className='row'>
+                    <div className='row form'>
                         <div className='col-sm-12 col-md-2 col-lg-2'>
                             <label>
                                 Check-in-Date
@@ -108,8 +110,8 @@ const Banner = () => {
                         </div>
                     </div>
                 </form>
+                </div>
             </div>
-          
             <div className='bookingform-container'>
                 <Container className='d-flex justify-content-center mt-5'>
                     <BookingForm></BookingForm>
