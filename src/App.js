@@ -3,7 +3,8 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import AuthProvider from './Context/AuthProvider';
 import Home from './Pages/Home/Home';
 import PrivateRoute from './Pages/Home/PrivateRoute/PrivateRoute';
@@ -13,6 +14,8 @@ import Contact from './Pages/Contact/Contact';
 import NotFound from './Pages/NotFound/NotFound';
 import AllRooms from "./Pages/Home/Rooms/AllRooms/AllRooms";
 import RoomDetails from "./Pages/Home/Rooms/RoomDetails/RoomDetails";
+import NavBar from "./Pages/Shared/NavBar/NavBar";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 
 function App() {
@@ -20,6 +23,7 @@ function App() {
     <div>
       <AuthProvider>
       <BrowserRouter>
+      <NavBar></NavBar>
         <Routes>
          <Route path="/" element={<Home />} />
          <Route path="/home" element={<Home />} />
@@ -30,6 +34,7 @@ function App() {
          <Route path="/signup" element={<SignUp />} />
          <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer></Footer>
       </BrowserRouter>
       </AuthProvider>
     </div>

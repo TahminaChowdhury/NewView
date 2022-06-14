@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Room.css'
 
-
-
 const Room = ({ room }) => {
 
     const { _id, name, description, size, price, accomodation, img } = room;
 
     return (
-        <div className='card mt-5 mb-3'>
+        <div className='card m-5 mb-3'>
             <div className='card-img'>
                 <img src={img} alt="" className='img-fluid' />
             </div>

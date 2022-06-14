@@ -2,9 +2,9 @@ import React from 'react';
 import { Carousel, Container } from 'react-bootstrap';
 import './Banner.css'
 import { useForm } from "react-hook-form";
-import img1 from '../../../images/puuwai_design_build_kukuiula_kauai_poipu_ethan_tweedie_photography_architectural_photography-3.jpg'
-import img2 from '../../../images/111LexowAve_Aug18-1074.jpg'
-import img3 from '../../../images/istockphoto-1303674434-170667a.jpg'
+import img1 from '../../../images/Beedroom-1.jpg'
+import img2 from '../../../images/Beedroom-2.jpg'
+import img3 from '../../../images/Beedroom-4.jpg'
 import BookingForm from '../RoomReservation/BookingForm/BookingForm';
 import { Link } from 'react-router-dom';
 

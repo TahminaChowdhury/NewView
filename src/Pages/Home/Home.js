@@ -10,11 +10,9 @@ import AboutUs from './AboutUs/AboutUs';
 const Home = () => {
     return (
         <div>
-          <NavBar></NavBar>
           <Banner></Banner>
           <AboutUs></AboutUs>
           <Rooms></Rooms>
-          <Footer></Footer>
         </div>
     );
 };
