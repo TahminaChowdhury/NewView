@@ -11,3 +11,6 @@
   box-sizing: border-box;
   font-family: 'Space Grotesk', sans-serif;
 }
+body{
+  overflow-x: hidden;
+}
