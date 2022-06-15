@@ -4,7 +4,7 @@ import Calender from './Calender/Calender';
 
 import './RoomReservation.css'
 
-const RoomReservation = () => {
+const RoomReservation = (props) => {
   
     return (
         <div>
@@ -14,7 +14,7 @@ const RoomReservation = () => {
                     <Calender></Calender>
                 </div>
                 <div className='col-sm-12 col-md-4 col-lg-4'>
-                    <BookingForm></BookingForm>
+                    <BookingForm roomDetails={props.roomDetails}></BookingForm>
                 </div>
             </div>
         </div>

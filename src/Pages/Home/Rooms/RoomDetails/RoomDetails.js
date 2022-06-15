@@ -28,7 +28,6 @@ const RoomDetails = () => {
 
     return (
         <>
-            <NavBar></NavBar>
             <Container className='mb-5'>
                 <div className='row'>
                     <div className='col-12'>
@@ -49,7 +48,7 @@ const RoomDetails = () => {
                                 <h3 className='my-5'>Aminities</h3>
                             </div>
                             <hr />
-                            <RoomReservation></RoomReservation>
+                            <RoomReservation roomDetails={roomDetails}></RoomReservation>
                         </div>
                     </div>
 
