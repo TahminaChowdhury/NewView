@@ -16,6 +16,7 @@ import AllRooms from "./Pages/Home/Rooms/AllRooms/AllRooms";
 import RoomDetails from "./Pages/Home/Rooms/RoomDetails/RoomDetails";
 import NavBar from "./Pages/Shared/NavBar/NavBar";
 import Footer from "./Pages/Shared/Footer/Footer";
+import Cart from "./Pages/Cart/Cart";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
          <Route path="/home" element={<Home />} />
          <Route path="/allrooms" element={<AllRooms />} />
          <Route path="/roomdetails/:id" element={<PrivateRoute><RoomDetails /></PrivateRoute>}/>
+         <Route path="/cart" element={<Cart />} />
          <Route path="/contact" element={<Contact />} />
          <Route path="/login" element={<Login />} />
          <Route path="/signup" element={<SignUp />} />

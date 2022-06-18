@@ -1,14 +1,10 @@
 import React from 'react';
 import './AllRooms.css';
-import Slider from 'react-slick';
 import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import BookingForm from '../../RoomReservation/BookingForm/BookingForm';
-import img1 from '../../../../images/Beedroom-1.jpg';
-import img2 from '../../../../images/Beedroom-2.jpg';
-import img3 from '../../../../images/Beedroom-3.jpg';
-import img4 from '../../../../images/Beedroom-4.jpg';
+
 
 const AllRooms = () => {
   const [allRooms, setAllRooms] = useState([]);

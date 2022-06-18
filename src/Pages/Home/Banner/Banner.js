@@ -6,9 +6,6 @@ import img1 from '../../../images/Beedroom-1.jpg'
 import img2 from '../../../images/Beedroom-2.jpg'
 import img3 from '../../../images/Beedroom-4.jpg'
 import BookingForm from '../RoomReservation/BookingForm/BookingForm';
-import { Link } from 'react-router-dom';
-
-
 
 const Banner = () => {
     const { register, handleSubmit } = useForm();

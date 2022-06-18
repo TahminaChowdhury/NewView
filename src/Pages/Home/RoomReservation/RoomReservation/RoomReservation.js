@@ -1,6 +1,6 @@
 import React from 'react';
-import BookingForm from './BookingForm/BookingForm';
-import Calender from './Calender/Calender';
+import BookingForm from '../BookingForm/BookingForm';
+import Calender from '../Calender/Calender';
 
 import './RoomReservation.css'
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
-import { Navigate, Route, useLocation } from 'react-router';
+import { Navigate, useLocation } from 'react-router';
 import useAuth from '../../../Hook/useAuth';
 
 const PrivateRoute = ({ children }) => {

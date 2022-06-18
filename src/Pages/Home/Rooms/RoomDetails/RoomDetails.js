@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import NavBar from '../../../Shared/NavBar/NavBar';
-import RoomReservation from '../../RoomReservation/RoomReservation'
+import RoomReservation from '../../RoomReservation/RoomReservation/RoomReservation'
 import RelatedRooms from './RelatedRooms';
 import './RoomDetails.css'
+
 const RoomDetails = () => {
     const { id } = useParams();
     const [roomDetails, setRoomDetails] = useState({});

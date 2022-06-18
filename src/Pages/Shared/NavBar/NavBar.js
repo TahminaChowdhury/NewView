@@ -35,7 +35,7 @@ const NavBar = () => {
                                                     ? `${user.photoURL}`
                                                     : `https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png`
                                             }
-                                            alt="profile-pic"
+                                            alt=""
                                             className="img-fluid user-img ms-5"
                                         />
 

@@ -1,18 +1,31 @@
 import React from 'react';
 import './BookingForm.css';
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 
-const BookingForm = ({ roomDetails }) => {
-    const { price } = roomDetails;
+const BookingForm = (props) => {
+  const { name, img, price } = props.roomDetails;
   const { register, handleSubmit } = useForm();
+  const [bookingSuccessful, setBookingSuccessful] = useState(true);
+
   const onSubmit = (data) => {
-    data.price = price
-    fetch('http://localhost:5000/bookings', {
+    data.name = name;
+    data.img = img;
+    data.price = price;
+
+    fetch('https://pacific-sea-24561.herokuapp.com/bookings', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(data),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged === 'true') {
+          setBookingSuccessful(true);
+        }
+      });
   };
+
   return (
     <div>
       <div className="booking-form p-4">
@@ -25,7 +38,7 @@ const BookingForm = ({ roomDetails }) => {
               <span>
                 <input
                   type="date"
-                  {...register('check-in-date')}
+                  {...register('checkInDate')}
                   className="input-field"
                 />
               </span>
@@ -38,7 +51,7 @@ const BookingForm = ({ roomDetails }) => {
               <span>
                 <input
                   type="date"
-                  {...register('check-out-date')}
+                  {...register('checkOutDate')}
                   className="input-field"
                 />
               </span>
@@ -96,10 +109,16 @@ const BookingForm = ({ roomDetails }) => {
             <h4>Your price</h4>
             <h5>$ {price} / per room</h5>
           </div>
-
           <button type="submit" className="signIn-btn mt-4 px-3 py-2">
             BOOK NOW
           </button>
+          {/* {bookingSuccessful ? (
+            <p className="mt-2 text-success">
+              You successfully added a room reservation!
+            </p>
+          ) : (
+            ''
+          )} */}
         </form>
       </div>
     </div>

@@ -1,0 +1,18 @@
+.bookings img {
+  width: 150px;
+  height: 120px;
+  object-fit: cover;
+}
+.bookings {
+  display: flex;
+}
+.bookings p {
+  margin: 0;
+  padding: 0;
+}
+.room-name {
+  font-size: 25px;
+}
+.details {
+  font-size: 17px;
+}
