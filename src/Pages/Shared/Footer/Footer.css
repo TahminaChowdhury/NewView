@@ -1,17 +1,16 @@
-footer{
-    background-color: black;
-    color: white;
+footer {
+  background-color: black;
+  color: white;
 }
 
-.contact-details p{
-    line-height: 12px;
+.contact-details p {
+  line-height: 12px;
 }
 
-.facebook-icon{
-    font-size: 20px;
+.facebook-icon {
+  font-size: 20px;
 }
-.social-icon{
-    font-size: 20px;
-    margin-left: 30px;
+.social-icon {
+  font-size: 20px;
+  margin-left: 30px;
 }
-

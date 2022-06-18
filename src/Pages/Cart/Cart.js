@@ -4,15 +4,13 @@ import Table from 'react-bootstrap/Table';
 import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import useAuth from '../../Hook/useAuth'
 
 const Cart = () => {
-  const [allBookings, setAllBookings] = useState([]);
 
-  useEffect(() => {
-    fetch('https://pacific-sea-24561.herokuapp.com/bookings')
-      .then((res) => res.json())
-      .then((data) => setAllBookings(data));
-  }, []);
+  const {user} = useAuth();
+
+  const [allBookings, setAllBookings] = useState([]);
 
   return (
     <Container>

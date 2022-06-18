@@ -19,10 +19,7 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
 
-
-
     // signin with email and password
-    
     const signupWithEmailAndPassword = (name ,email, password, navigate) => {
 
         setLoading(true);
