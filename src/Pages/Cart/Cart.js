@@ -16,37 +16,37 @@ const Cart = () => {
 
   return (
     <Container>
-      {allBookings.map((bookings) => {
-        const {
-          _id,
-          name,
-          img,
-          price,
-          room,
-          adults,
-          checkInDate,
-          checkOutDate,
-        } = bookings;
+      <Table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Rooms</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub-Total</th>
+          </tr>
+        </thead>
+        {allBookings.map((bookings) => {
+          const {
+            _id,
+            name,
+            img,
+            price,
+            room,
+            adults,
+            checkInDate,
+            checkOutDate,
+          } = bookings;
 
-       const subTotal = price * parseInt(room);
+          const subTotal = price * parseInt(room);
 
-        return (
-          <>
-            <Table>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Rooms</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Sub-Total</th>
-                </tr>
-              </thead>
+          return (
+            <>
               <tbody>
                 <tr>
                   <td></td>
                   <td>
-                    <div key={_id} className="bookings">
+                    <div key={_id} className="bookings my-3">
                       <div></div>
                       <div>
                         <img src={img} alt="" />
@@ -65,10 +65,10 @@ const Cart = () => {
                   <td>{subTotal}</td>
                 </tr>
               </tbody>
-            </Table>
-          </>
-        );
-      })}
+            </>
+          );
+        })}
+      </Table>
     </Container>
   );
 };
