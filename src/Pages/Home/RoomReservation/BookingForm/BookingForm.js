@@ -2,13 +2,16 @@ import React from 'react';
 import './BookingForm.css';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import useAuth from '../../../../Hook/useAuth';
 
 const BookingForm = (props) => {
+  const {user} = useAuth();
   const { name, img, price } = props;
   const { register, handleSubmit } = useForm();
   const [bookingSuccessful, setBookingSuccessful] = useState(true);
 
   const onSubmit = (data) => {
+    data.email = user.email;
     data.name = name;
     data.img = img;
     data.price = price;

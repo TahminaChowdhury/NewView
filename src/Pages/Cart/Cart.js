@@ -12,6 +12,12 @@ const Cart = () => {
 
   const [allBookings, setAllBookings] = useState([]);
 
+  useEffect(() => {
+    fetch(`https://pacific-sea-24561.herokuapp.com/bookings/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setAllBookings(data));
+  }, []);
+
   return (
     <Container>
       <Table>

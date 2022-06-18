@@ -11,7 +11,6 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
 
-
     // auth
     const auth = getAuth();
 
@@ -20,14 +19,11 @@ const useFirebase = () => {
     const facebookProvider = new FacebookAuthProvider();
 
     // signin with email and password
-    const signupWithEmailAndPassword = (name ,email, password, navigate) => {
-
+    const signupWithEmailAndPassword = (name ,email, password, navigate, location) => {
         setLoading(true);
-
         createUserWithEmailAndPassword(auth, email, password)
 
         .then((result) => {
-           console.log(result.user)
             const newUser = {email, displayName: name};
             setUser(newUser);
             
@@ -39,7 +35,9 @@ const useFirebase = () => {
                 
               });
 
-              navigate.replace('/home')
+              const { from } = location.state || { from: { pathname: "/" }};
+
+            navigate(from, { replace: true });
               setError('');
         })
         .catch((error) => {
@@ -51,7 +49,6 @@ const useFirebase = () => {
 
 
     // sign in with email and password
-
     const loginWithEmailAndPassword = (email, password, location , navigate) => {
 
         setLoading(true);
@@ -73,7 +70,6 @@ const useFirebase = () => {
     }
 
     // log in with google 
-
     const loginWithGoogle = (location , navigate) => {
         
         setLoading(true);
@@ -84,7 +80,7 @@ const useFirebase = () => {
             const user = result.user;
             setUser(user);
 
-           
+            saveUserToDb(user.displayName, user.email, "PUT");
             const { from } = location.state || { from: { pathname: "/" }};
 
             navigate(from, { replace: true });
@@ -98,7 +94,6 @@ const useFirebase = () => {
     };
 
     // login with facebook
-
     const loginWithFacebook = () => {
         signInWithPopup(auth, facebookProvider)
             .then((result) => {
@@ -110,9 +105,18 @@ const useFirebase = () => {
             });
     }
 
+    const saveUserToDb = (displayName, email, method) => {
+        const user = {displayName, email}
+        fetch('https://pacific-lowlands-13394.herokuapp.com/users', {
+            method: method,
+            headers: {"content-type": "application/json"},
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
 
     // logout
-
     const logout = () => {
         signOut(auth).then(() => {
             
@@ -120,8 +124,8 @@ const useFirebase = () => {
             
           });
     }
-    // observer
 
+    // observer
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {

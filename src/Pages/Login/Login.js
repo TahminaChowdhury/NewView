@@ -61,8 +61,9 @@ const Login = () => {
                 </div>
                 <div className="mt-3">
                   <p>Forgot password?</p>
+                  <p>{error}</p>
                 </div>
-                <button className="signIn-btn px-3 py-2 rounded-pill mt-4">
+                <button className="signIn-btn px-3 py-2 rounded-pill mt-4" onClick={loginWithEmailAndPassword}>
                   Login
                 </button>
               </form>
