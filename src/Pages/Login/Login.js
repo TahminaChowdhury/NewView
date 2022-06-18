@@ -26,7 +26,7 @@ const Login = () => {
   return (
     <div className="form-container">
       <div className="row">
-        <div className="col-12 d-flex justify-content-center">
+        <div className="col-12 d-flex justify-content-center align-items-center">
           <div className="form-content">
             <div className="form-items mx-5">
               <div>
@@ -61,7 +61,7 @@ const Login = () => {
                 </div>
                 <div className="mt-3">
                   <p>Forgot password?</p>
-                  <p>{error}</p>
+                  <p className='text-success'>{error}</p>
                 </div>
                 <button className="signIn-btn px-3 py-2 rounded-pill mt-4" onClick={loginWithEmailAndPassword}>
                   Login

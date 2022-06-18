@@ -42,7 +42,7 @@ const Cart = () => {
             checkOutDate,
           } = bookings;
 
-          const subTotal = price * parseInt(room);
+          const subtotal = price * parseInt(room);
 
           return (
             <>
@@ -66,7 +66,7 @@ const Cart = () => {
                   </td>
                   <td>&{price}</td>
                   <td>{room.slice(0, 1)}</td>
-                  <td>{subTotal}</td>
+                  <td>{subtotal}</td>
                 </tr>
               </tbody>
             </>

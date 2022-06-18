@@ -17,6 +17,7 @@ import RoomDetails from "./Pages/Home/Rooms/RoomDetails/RoomDetails";
 import NavBar from "./Pages/Shared/NavBar/NavBar";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Cart from "./Pages/Cart/Cart";
+import CheckOut from "./Pages/Cart/CheckOut/CheckOut";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
          <Route path="/allrooms" element={<AllRooms />} />
          <Route path="/roomdetails/:id" element={<PrivateRoute><RoomDetails /></PrivateRoute>}/>
          <Route path="/cart" element={<Cart />} />
+         <Route path="/checkout" element={<CheckOut />} />
          <Route path="/contact" element={<Contact />} />
          <Route path="/login" element={<Login />} />
          <Route path="/signup" element={<SignUp />} />
