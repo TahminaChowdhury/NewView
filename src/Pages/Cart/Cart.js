@@ -57,7 +57,7 @@ const Cart = () => {
                       </div>
                     </div>
                   </td>
-                  <td>{price}</td>
+                  <td>&{price}</td>
                   <td>{room.slice(0, 1)}</td>
                   <td></td>
                 </tr>

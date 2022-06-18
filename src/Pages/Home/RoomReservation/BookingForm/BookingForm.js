@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 
 const BookingForm = (props) => {
-  const { name, img, price } = props.roomDetails;
+  const { name, img, price } = props;
   const { register, handleSubmit } = useForm();
   const [bookingSuccessful, setBookingSuccessful] = useState(true);
 
