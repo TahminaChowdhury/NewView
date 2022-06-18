@@ -27,6 +27,9 @@ const Cart = () => {
           checkInDate,
           checkOutDate,
         } = bookings;
+
+       const subTotal = price * parseInt(room);
+
         return (
           <>
             <Table>
@@ -59,7 +62,7 @@ const Cart = () => {
                   </td>
                   <td>&{price}</td>
                   <td>{room.slice(0, 1)}</td>
-                  <td></td>
+                  <td>{subTotal}</td>
                 </tr>
               </tbody>
             </Table>
