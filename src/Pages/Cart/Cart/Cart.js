@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import useAuth from '../../../Hook/useAuth'
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
@@ -19,7 +20,13 @@ const Cart = () => {
   }, []);
 
   return (
-    <Container>
+    <>
+    <div className='bg'>
+      <Container>
+      <h2 className='title'>Cart</h2>
+      </Container>
+    </div>
+    <Container className='my-5'>
       <Table>
         <thead>
           <tr>
@@ -64,16 +71,24 @@ const Cart = () => {
                       </div>
                     </div>
                   </td>
-                  <td>&{price}</td>
+                  <td>$ {price}</td>
                   <td>{room.slice(0, 1)}</td>
-                  <td>{subtotal}</td>
+                  <td>$ {subtotal}</td>
                 </tr>
               </tbody>
             </>
           );
         })}
       </Table>
+      <div className='mt-5'>
+        <Link to="/checkout">
+          <button className='simple-btn px-4 py-3'>
+            Procced to checkout
+          </button>
+        </Link>
+      </div>
     </Container>
+    </>
   );
 };
 

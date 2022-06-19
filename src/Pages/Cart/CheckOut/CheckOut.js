@@ -8,8 +8,11 @@ import { useForm } from 'react-hook-form';
 const CheckOut = () => {
   const { user } = useAuth();
   const [allBookings, setAllBookings] = useState([]);
+
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
+
+  // Fetch all bookings data
   useEffect(() => {
     fetch(`https://pacific-sea-24561.herokuapp.com/bookings/${user?.email}`)
       .then((res) => res.json())
@@ -17,7 +20,13 @@ const CheckOut = () => {
   }, []);
 
   return (
-    <Container className='my-5'>
+    <>
+    <div className='bg'>
+      <Container>
+      <h2 className='title'>Checkout</h2>
+      </Container>
+    </div>
+    <Container className="my-5">
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="row">
@@ -25,33 +34,33 @@ const CheckOut = () => {
             <div className="col-12">
               <div className="row billing-form">
                 <div className="col-sm-12 col-md-6">
-                    <h2 className='mb-5'>Billing Deatils</h2>
+                  <h2 className="mb-5">Billing Deatils</h2>
                   <div className="mb-4">
                     <label htmlFor="">First name</label>
                     <br />
-                    <input {...register('firstName')} required />
+                    <input type="text" {...register('firstName')} required />
                   </div>
                   <div className="mb-4">
                     <label htmlFor="">Last name</label>
                     <br />
-                    <input {...register('lastName')} required />
+                    <input type="text" {...register('lastName')} required />
                   </div>
                   <div className="mb-4">
                     <label htmlFor="">Country / Region</label>
                     <br />
-                    <input {...register('country')} required />
+                    <input type="text" {...register('country')} required />
                   </div>
-                  <div className="mb-4">
+                  <div type="text" className="mb-4">
                     <label htmlFor="">Street address</label>
                     <br />
                     <input {...register('address')} required />
                   </div>
-                  <div className="mb-4">
+                  <div type="text" className="mb-4">
                     <label htmlFor="">Town / City</label>
                     <br />
                     <input {...register('town')} required />
                   </div>
-                  <div className="mb-4">
+                  <div type="number" className="mb-4">
                     <label htmlFor="">Postcode / Zip</label>
                     <br />
                     <input {...register('postcode')} required />
@@ -70,17 +79,21 @@ const CheckOut = () => {
 
                 {/* Additional Information */}
                 <div className="col-sm-12 col-md-6">
-                <h2 className='mb-5'>Additional Information</h2>
+                  <h2 className="mb-5">Additional Information</h2>
                   <div className="mb-4">
-                    <label htmlFor="">Email address</label>
+                    <label htmlFor="">Reservation notes (optional)</label>
                     <br />
-                    <input type="email" {...register('email')} required />
+                    <input
+                      type="text"
+                      {...register('additionalInfo')}
+                      required
+                    />
                   </div>
                 </div>
               </div>
             </div>
             <div className="col-12 my-5">
-              <h3 className="mb-5">Your Order</h3>
+              <h3 className="mb-5">Your Reservation</h3>
               <Table>
                 <thead>
                   <tr>
@@ -126,14 +139,20 @@ const CheckOut = () => {
               </Table>
             </div>
           </div>
-
-          {/* Submit Button */}
-          <div>
-            <input type="submit" value="Submit" />
+          <div className="col-12">
+            {/* Submit Button */}
+            <div className="mt-3">
+              <input
+                type="submit"
+                className="simple-btn px-4 py-3"
+                value="Confrim Reservation"
+              />
+            </div>
           </div>
         </form>
       </div>
     </Container>
+    </>
   );
 };
 
