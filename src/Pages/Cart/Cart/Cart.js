@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import useAuth from '../../Hook/useAuth'
+import useAuth from '../../../Hook/useAuth'
 
 const Cart = () => {
 

@@ -16,7 +16,7 @@ import AllRooms from "./Pages/Home/Rooms/AllRooms/AllRooms";
 import RoomDetails from "./Pages/Home/Rooms/RoomDetails/RoomDetails";
 import NavBar from "./Pages/Shared/NavBar/NavBar";
 import Footer from "./Pages/Shared/Footer/Footer";
-import Cart from "./Pages/Cart/Cart";
+import Cart from "./Pages/Cart/Cart/Cart"
 import CheckOut from "./Pages/Cart/CheckOut/CheckOut";
 
 
