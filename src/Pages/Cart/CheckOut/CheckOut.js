@@ -9,7 +9,7 @@ const CheckOut = () => {
   const { user } = useAuth();
   const [allBookings, setAllBookings] = useState([]);
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = (data) => console.log(data);
 
   // Fetch all bookings data
@@ -35,46 +35,57 @@ const CheckOut = () => {
               <div className="row billing-form">
                 <div className="col-sm-12 col-md-6">
                   <h2 className="mb-5">Billing Deatils</h2>
+
                   <div className="mb-4">
                     <label htmlFor="">First name</label>
                     <br />
-                    <input type="text" {...register('firstName')} required />
+                    <input type="text" {...register('name', { required: true })}/>
+                    {errors.exampleRequired && <span>This field is required</span>}
                   </div>
+
                   <div className="mb-4">
-                    <label htmlFor="">Last name</label>
+                    <label htmlFor="">Company name (optional)</label>
                     <br />
-                    <input type="text" {...register('lastName')} required />
+                    <input type="text" {...register('companyname', { required: false })} />
+                    {errors.exampleRequired && <span>This field is required</span>}
                   </div>
+
                   <div className="mb-4">
                     <label htmlFor="">Country / Region</label>
                     <br />
-                    <input type="text" {...register('country')} required />
+                    <input type="text" {...register('country', { required: true })} required />
+                    {errors.exampleRequired && <span>This field is required</span>}
                   </div>
+
                   <div type="text" className="mb-4">
-                    <label htmlFor="">Street address</label>
+                    <label htmlFor="">Address</label>
                     <br />
-                    <input {...register('address')} required />
+                    <input {...register('address', { required: true })}/>
+                    {errors.exampleRequired && <span>This field is required</span>}
                   </div>
-                  <div type="text" className="mb-4">
-                    <label htmlFor="">Town / City</label>
-                    <br />
-                    <input {...register('town')} required />
-                  </div>
+
                   <div type="number" className="mb-4">
                     <label htmlFor="">Postcode / Zip</label>
                     <br />
-                    <input {...register('postcode')} required />
+                    <input {...register('postcode', { required: true })}/>
+                    {errors.exampleRequired && <span>This field is required</span>}
                   </div>
+
                   <div className="mb-4">
                     <label htmlFor="">Phone</label>
                     <br />
-                    <input type="number" {...register('phone')} required />
+                    <input type="number" {...register('phone', { required: true })} 
+                    required />
+                    {errors.exampleRequired && <span>This field is required</span>}
                   </div>
+
                   <div className="mb-4">
                     <label htmlFor="">Email address</label>
                     <br />
-                    <input type="email" {...register('email')} required />
+                    <input type="email" {...register('email', { required: true })}  />
+                    {errors.exampleRequired && <span>This field is required</span>}
                   </div>
+
                 </div>
 
                 {/* Additional Information */}
@@ -85,8 +96,7 @@ const CheckOut = () => {
                     <br />
                     <input
                       type="text"
-                      {...register('additionalInfo')}
-                      required
+                      {...register('additionalInfo', { required: false })}
                     />
                   </div>
                 </div>
