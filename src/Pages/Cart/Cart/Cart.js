@@ -26,8 +26,8 @@ const Cart = () => {
       <h2 className='title'>Cart</h2>
       </Container>
     </div>
-    <Container className='my-5'>
-      <Table>
+    <Container className='my-5 py-5'>
+      <Table className='my-5'>
         <thead>
           <tr>
             <th></th>
@@ -80,7 +80,7 @@ const Cart = () => {
           );
         })}
       </Table>
-      <div className='mt-5'>
+      <div className='mt-5 pt-5'>
         <Link to="/checkout">
           <button className='simple-btn px-4 py-3'>
             Procced to checkout

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Container } from 'react-bootstrap';
-import Slider from 'react-slick';
-import { useRef } from 'react';
 import './Rooms.css';
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
 import Room from './Room/Room';
 import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 
@@ -33,11 +33,13 @@ const Rooms = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 2000,
     slidesToShow: 2,
     slidesToScroll: 2,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -68,9 +70,19 @@ const Rooms = () => {
 
   return (
     <div className="my-5">
-      <Container>
+      <Container className="my-5">
         <div className="row">
-          <h1 className="my-5">Our Rooms</h1>
+          <div className="d-flex justify-content-between my-5">
+            <div>
+              <h1>Our Rooms</h1>
+            </div>
+            <div>
+              <Link to="/allrooms">
+                <button className="view-room-btn">View All Rooms</button>
+              </Link>
+            </div>
+          </div>
+
           <Slider {...settings}>
             {rooms.map((room) => (
               <Room key={room._id} room={room}></Room>

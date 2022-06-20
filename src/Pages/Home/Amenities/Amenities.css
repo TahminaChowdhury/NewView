@@ -1,0 +1,38 @@
+.amenities-container {
+  background-color: var(--secondary);
+}
+.amenities-container p {
+  font-size: 17px;
+}
+.img-container {
+  position: relative;
+}
+.breakfast-img {
+  position: relative;
+}
+.breakfast-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.amenities-images img {
+  width: 50px;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 500px) {
+    .cooking-img {
+        position: absolute;
+        left: 250px;
+        bottom: -50px;
+      }
+      .cooking-img img {
+        width: 70%;
+        height: 100%;
+        border: 2px solid var(--light);
+      }
+      .amineties-description{
+        margin: 50px;
+      }
+}

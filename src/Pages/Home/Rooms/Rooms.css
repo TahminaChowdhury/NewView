@@ -1,3 +1,20 @@
+
+.view-room-btn{
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    fill: #000000;
+    color: #000000;
+    background-color: #00000000;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #000000;
+    border-radius: 0px 0px 0px 0px;
+    padding: 20px 40px 20px 40px;
+    transition-duration: .3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
 .arrow{
     background-color: none;
     position: absolute;
