@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './Rooms.css';
-import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import Room from './Room/Room';
@@ -69,8 +68,8 @@ const Rooms = () => {
   };
 
   return (
-    <div className="my-5">
-      <Container className="my-5">
+    <div className="mx-5 rooms-section">
+      <div className="my-5">
         <div className="row">
           <div className="d-flex justify-content-between my-5">
             <div>
@@ -89,7 +88,7 @@ const Rooms = () => {
             ))}
           </Slider>
         </div>
-      </Container>
+      </div>
     </div>
   );
 };

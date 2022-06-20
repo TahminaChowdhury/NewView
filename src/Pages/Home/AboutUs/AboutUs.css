@@ -1,0 +1,26 @@
+.about-container{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+.about-container p {
+  text-align: justify;
+  font-size: 18px;
+}
+.about-section-img {
+  position: relative;
+}
+.bedroom-img {
+  position: relative;
+}
+@media (min-width: 500px) {
+  .modern-bedroom-img {
+    position: absolute;
+    left: -150px;
+    bottom: -100px;
+  }
+  .modern-bedroom-img img {
+    width: 50%;
+    height: 100%;
+    border: 2px solid var(--light);
+  }
+}

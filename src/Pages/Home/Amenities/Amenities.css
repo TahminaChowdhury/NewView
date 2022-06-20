@@ -1,6 +1,10 @@
 .amenities-container {
   background-color: var(--secondary);
 }
+.amenities-container p{
+  text-align: justify;
+  font-size: 18px;
+}
 .amenities-container p {
   font-size: 17px;
 }

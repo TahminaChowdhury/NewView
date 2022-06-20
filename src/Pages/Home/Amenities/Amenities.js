@@ -16,14 +16,16 @@ const Amenities = () => {
       <div className="row mx-5">
         <div className="col-sm-12 col-md-6">
           <div className="py-5">
-            <h1>The Grand Amenities</h1>
+            <h1>The Amenities</h1>
             <div className="img-container my-5">
               <div className="breakfast-img">
-                <img src={img1} className="img-fluid" alt="" />
+                <Slide left>
+                  <img src={img1} className="img-fluid" alt="" />
+                </Slide>
               </div>
               <div className="cooking-img mt-4">
                 <Slide bottom>
-                <img src={img2} className="img-fluid" alt="" />
+                  <img src={img2} className="img-fluid" alt="" />
                 </Slide>
               </div>
             </div>
@@ -49,15 +51,27 @@ const Amenities = () => {
               feature of your property.
             </p>
           </div>
-        
-            <div className="row my-5 text-center amenities-images">
-                <div className="col-4"><img src={img3} className="img-fluid" alt="" /></div>
-                <div className="col-4"><img src={img4} className="img-fluid" alt="" /></div>
-                <div className="col-4"><img src={img5} className="img-fluid" alt="" /></div>
-                <div className="col-4 pt-5"><img src={img6} className="img-fluid" alt="" /></div>
-                <div className="col-4 pt-5"><img src={img7} className="img-fluid" alt="" /></div>
-                <div className="col-4 pt-5"><img src={img8} className="img-fluid" alt="" /></div>
+
+          <div className="row my-5 text-center amenities-images">
+            <div className="col-4">
+              <img src={img3} className="img-fluid" alt="" />
             </div>
+            <div className="col-4">
+              <img src={img4} className="img-fluid" alt="" />
+            </div>
+            <div className="col-4">
+              <img src={img5} className="img-fluid" alt="" />
+            </div>
+            <div className="col-4 pt-5">
+              <img src={img6} className="img-fluid" alt="" />
+            </div>
+            <div className="col-4 pt-5">
+              <img src={img7} className="img-fluid" alt="" />
+            </div>
+            <div className="col-4 pt-5">
+              <img src={img8} className="img-fluid" alt="" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
