@@ -77,7 +77,7 @@ const Rooms = () => {
             </div>
             <div>
               <Link to="/allrooms">
-                <button className="view-room-btn">View All Rooms</button>
+                <button className="regular-btn">View All Rooms</button>
               </Link>
             </div>
           </div>
