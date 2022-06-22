@@ -1,50 +1,86 @@
 import React from 'react';
-import './Footer.css'
+import './Footer.css';
+import img1 from '../../../images/umbrella-deck-chair-around-outdoor-swimming-pool-hotel-resort-nearly-sea-beach-ocean_74190-14080.jpg';
+import img2 from '../../../images/croissant-boiled-egg-orange-juice-yogurt-breakfast-tray-bed-hotel-room_176474-2601.webp';
+import img3 from '../../../images/spa.webp';
+import img4 from '../../../images/lobby-living-room-hotel_1150-11124.jpg';
 
 const Footer = () => {
-    return (
-        <footer>
-            <div className="footer-container mx-5">
-                <div className="row d-flex justify-content-between mt-5 pt-5  ">
-                    <div className="col-sm-12 col-md-4 col-lg-4">
-                        <div className=" text-start">
-                            <h4 className='mb-4'>About Us</h4>
-                            <p>Welcome to The New Viiew, where comfort is everything. Beautiful room presentations, straightforward booking & reservation options, & a whole lot more awaits here.</p>
-                        </div>
-                    </div>
-
-                    <div className="col-sm-12 col-md-3 col-lg-3 contact-details">
-                        <div className="text-start">
-                            <h5 className='mb-4'>Contact</h5>
-                            <p>Email: thenewview@gmail.com</p>
-                            <p>Phone: 01755-555-80</p>
-                            <p>Address: Dhaka, Bangladesh</p>
-                        </div>
-                    </div>
-
-                    <div className="col-sm-12 col-md-3 col-lg-3">
-                        <div>
-                            <h5 className='mb-4 text-start'>Get Social</h5>
-                            <p>Follow us on social media and keep in touch with The New View</p>
-                            <span><i class="fab fa-facebook facebook-icon"></i></span>
-                            <span><i class="fab fa-instagram social-icon"></i></span>
-                            <span><i class="fab fa-twitter social-icon"></i></span>
-                            <span><i class="fab fa-youtube social-icon"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12">
-                        <div className="text-center py-5">
-                            <hr />
-                            <br />
-                            <small className="text-white pt-3">© The New View 2022. All Rights Reserved</small>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <>
+      <div className="row gallery">
+        <div className="col-sm-12 col-md-3">
+          <img src={img1} className="img-fluid" alt="" />
+        </div>
+        <div className="col-sm-12 col-md-3">
+          <img src={img2} className="img-fluid" alt="" />
+        </div>
+        <div className="col-sm-12 col-md-3">
+          <img src={img3} className="img-fluid" alt="" />
+        </div>
+        <div className="col-sm-12 col-md-3">
+          <img src={img4} className="img-fluid" alt="" />
+        </div>
+      </div>
+      <footer>
+        <div className="footer-container mx-5">
+          <div className="row d-flex justify-content-between pt-5  ">
+            <div className="col-sm-12 col-md-4 col-lg-4">
+              <div className=" text-start">
+                <h4 className="mb-4">About Us</h4>
+                <p>
+                  Welcome to The New Viiew, where comfort is everything.
+                  Beautiful room presentations, straightforward booking &
+                  reservation options, & a whole lot more awaits here.
+                </p>
+              </div>
             </div>
-        </footer>
-    );
+
+            <div className="col-sm-12 col-md-3 col-lg-3 contact-details">
+              <div className="text-start">
+                <h5 className="mb-4">Contact</h5>
+                <p>Email: thenewview@gmail.com</p>
+                <p>Phone: 01755-555-80</p>
+                <p>Address: Dhaka, Bangladesh</p>
+              </div>
+            </div>
+
+            <div className="col-sm-12 col-md-3 col-lg-3">
+              <div>
+                <h5 className="mb-4 text-start">Get Social</h5>
+                <p>
+                  Follow us on social media and keep in touch with The New View
+                </p>
+                <span>
+                  <i class="fab fa-facebook facebook-icon"></i>
+                </span>
+                <span>
+                  <i class="fab fa-instagram social-icon"></i>
+                </span>
+                <span>
+                  <i class="fab fa-twitter social-icon"></i>
+                </span>
+                <span>
+                  <i class="fab fa-youtube social-icon"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <div className="text-center py-5">
+                <hr />
+                <br />
+                <small className="text-white pt-3">
+                  © The New View 2022. All Rights Reserved
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
 };
 
 export default Footer;

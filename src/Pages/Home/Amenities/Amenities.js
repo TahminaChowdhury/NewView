@@ -16,7 +16,10 @@ const Amenities = () => {
       <div className="row mx-5">
         <div className="col-sm-12 col-md-6">
           <div className="py-5">
-            <h1>The Amenities</h1>
+            <div className='d-flex align-items-center'>
+            <span className='divider '></span>
+            <h1 className='ps-4 fw-bold'>The Amenities</h1>
+            </div>
             <div className="img-container my-5">
               <div className="breakfast-img">
                 <Slide left>

@@ -15,13 +15,12 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
-                            className="ms-5 ps-5 my-2 my-lg-0 nav"
+                            className="me-5 ps-5 my-2 my-lg-0 nav"
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
                             <Link to="/home">HOME</Link>
                             <Link to="/allrooms">ROOMS</Link>
-                            <Link to="/gallery">GALLERY</Link>
                             <Link to="/contact">CONTACT</Link>
                             {
                                 user?.email ?

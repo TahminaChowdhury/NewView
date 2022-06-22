@@ -69,11 +69,12 @@ const Rooms = () => {
 
   return (
     <div className="mx-5 rooms-section">
-      <div className="my-5">
+      <div className="mb-5">
         <div className="row">
           <div className="d-flex justify-content-between my-5">
-            <div>
-              <h1>Our Rooms</h1>
+          <div className='d-flex align-items-center'>
+            <span className='divider '></span>
+            <h1 className='ps-4 fw-bold'>Our Rooms</h1>
             </div>
             <div>
               <Link to="/allrooms">

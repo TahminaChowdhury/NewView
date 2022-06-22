@@ -5,8 +5,11 @@
   text-align: justify;
   font-size: 18px;
 }
-.amenities-container p {
-  font-size: 17px;
+.divider{
+  width: 50px;
+  height: 6px;
+  background: black;
+  border: 2px solid black;
 }
 .img-container {
   position: relative;
