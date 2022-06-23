@@ -69,7 +69,7 @@ const Rooms = () => {
 
   return (
     <div className="mx-5 rooms-section">
-      <div className="mb-5">
+      <div className="my-5">
         <div className="row">
           <div className="d-flex justify-content-between my-5">
           <div className='d-flex align-items-center'>

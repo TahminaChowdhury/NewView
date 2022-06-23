@@ -38,3 +38,9 @@
     margin: 0 5px 0 2px;
     background-color: rgba(77,77,77,.12);
 }
+.alert{
+  font-size: 18px;
+}
+.alert a{
+  color: var(--primary);
+}

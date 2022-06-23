@@ -6,6 +6,7 @@ import AboutUs from './AboutUs/AboutUs';
 import Amenities from './Amenities/Amenities';
 import Reviews from './Reviews/Reviews';
 import NewsLetter from './NewsLetter/NewLetter';
+import Gallery from './Gallery/Gallery';
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Amenities></Amenities>
       <Reviews></Reviews>
       <NewsLetter></NewsLetter>
+      <Gallery></Gallery>
     </div>
   );
 };

@@ -1,27 +1,17 @@
 .newsletter-container {
-  background-color: var(--secondary);
-  height: 200px;
-  margin-top: 150px;
-  margin-bottom: 150px;
+  height: auto;
 }
-.newsletter{
-    padding-top: 80px;
-}
+
 .newsletter-container input {
   border: none;
   outline: none;
   padding: 2px 0px;
   background: none;
-  width: 100%;
+  width: 300px;
   border-bottom: 1px solid #000000;
   font-family: inherit;
   font-size: 17px;
   line-height: 39px;
   font-weight: inherit;
   color: #4d4d4d;
-}
-@media (max-width: 500px) {
-  .btn-wrapper {
-    margin-top: 30px;
-  }
 }

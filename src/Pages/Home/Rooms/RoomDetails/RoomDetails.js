@@ -16,6 +16,7 @@ const RoomDetails = () => {
             .then(data => setRoomDetails(data))
     }, [id])
     const { img, name, price, description, aminities } = roomDetails;
+    console.log(aminities);
 
     useEffect(() => {
         fetch(`https://pacific-sea-24561.herokuapp.com/rooms`)
@@ -28,7 +29,7 @@ const RoomDetails = () => {
 
     return (
         <>
-            <Container className='mb-5'>
+            <Container className='my-5'>
                 <div className='row'>
                     <div className='col-12'>
                         <div className='room-img'>
@@ -45,7 +46,10 @@ const RoomDetails = () => {
                             </div>
                             <hr />
                             <div className='aminities'>
-                                <h3 className='my-5'>Aminities</h3>
+                                <h3 className='my-5'>Amenities</h3>
+                                <div>
+                                 
+                                </div>
                             </div>
                             <hr />
                             <RoomReservation roomDetails={roomDetails}></RoomReservation>

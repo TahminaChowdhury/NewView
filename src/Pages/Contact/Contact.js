@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { Alert, Container } from 'react-bootstrap';
-import NavBar from '../Shared/NavBar/NavBar';
 import './Contact.css'
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
@@ -23,7 +22,6 @@ const Contact = () => {
 
     return (
         <>
-            <NavBar></NavBar>
             <Container>
             <div className='col-12 contact-bg'>
 

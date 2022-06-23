@@ -7,7 +7,7 @@ const Room = ({ room }) => {
     const { _id, name, description, size, price, accomodation, img } = room;
 
     return (
-        <div className='card mb-5'>
+        <div className='card my-5'>
             <div className='card-img'>
                 <img src={img} alt="" className='img-fluid' />
             </div>

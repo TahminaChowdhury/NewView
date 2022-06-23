@@ -3,12 +3,15 @@ import './BookingForm.css';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import useAuth from '../../../../Hook/useAuth';
+import { Alert } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const BookingForm = (props) => {
-  const {user} = useAuth();
+  const { user } = useAuth();
   const { name, img, price } = props;
   const { register, handleSubmit } = useForm();
-  const [bookingSuccessful, setBookingSuccessful] = useState(true);
+  const [bookingSuccessful, setBookingSuccessful] = useState(false);
+  console.log(bookingSuccessful);
 
   const onSubmit = (data) => {
     data.email = user.email;
@@ -25,6 +28,8 @@ const BookingForm = (props) => {
       .then((data) => {
         if (data.acknowledged === 'true') {
           setBookingSuccessful(true);
+        } else {
+          setBookingSuccessful(false);
         }
       });
   };
@@ -115,14 +120,19 @@ const BookingForm = (props) => {
           <button type="submit" className="signIn-btn mt-4 px-3 py-2">
             BOOK NOW
           </button>
-          {/* {bookingSuccessful ? (
-            <p className="mt-2 text-success">
-              You successfully added a room reservation!
-            </p>
-          ) : (
-            ''
-          )} */}
         </form>
+      </div>
+      <div className="mt-3">
+        {bookingSuccessful ? (
+          <div>
+            <Alert className="alert" variant="warning">
+              You successfully add a room reservation into{' '}
+              <Link to="/cart">Cart</Link>.Give it a click.
+            </Alert>
+          </div>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );
