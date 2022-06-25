@@ -71,11 +71,11 @@ const BookingForm = (props) => {
               <br />
               <span>
                 <select {...register('room')} className="room-filed">
-                  <option value="1 Room" selected>
+                  <option value="1" selected>
                     1 Room
                   </option>
-                  <option value="2 Room">2 Room</option>
-                  <option value="3 Room">3 Room</option>
+                  <option value="2">2 Rooms</option>
+                  <option value="3">3 Rooms</option>
                 </select>
               </span>
             </label>

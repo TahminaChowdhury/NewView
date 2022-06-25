@@ -1,12 +1,12 @@
 import React from 'react';
-import './Cart.css';
-import Table from 'react-bootstrap/Table';
+import './Cart.css'
 import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import useAuth from '../../../Hook/useAuth';
+import CartItem from './CartItem/CartItem';
 import { Link } from 'react-router-dom';
-import { TiDelete } from 'react-icons/ti';
+import Table from 'react-bootstrap/Table';
 
 const Cart = () => {
   const { user } = useAuth();
@@ -29,7 +29,7 @@ const Cart = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {
-          alert("Are you sure you want to delete?");
+          alert('Are you sure you want to delete?');
           setIsDelete(true);
         } else {
           setIsDelete(false);
@@ -44,64 +44,36 @@ const Cart = () => {
           <h2 className="title">Cart</h2>
         </Container>
       </div>
-      <Container className="my-5 py-5">
-        <Table className="my-5">
-          <thead>
-            <tr>
-              <th>Rooms</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Sub-Total</th>
-            </tr>
-          </thead>
-          {allBookings.map((bookings) => {
-            const {
-              _id,
-              name,
-              img,
-              price,
-              room,
-              adults,
-              checkInDate,
-              checkOutDate,
-            } = bookings;
-            const subtotal = price * parseInt(room);
-            return (
-              <>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div key={_id} className="bookings my-3">
-                        <div>
-                        <button className='delete-btn pe-3' onClick={() => handleDeleteBooking(_id)}>
-                        <TiDelete />
-                      </button>
-                          <img src={img} alt="" />
-                        </div>
-                        <div className="ms-3">
-                          <p className="mb-4 room-name">{name}</p>
-                          <p className="details">
-                            Reservation: {checkInDate}, {checkOutDate}
-                          </p>
-                          <p className="details">Guests: {adults} </p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>$ {price}</td>
-                    <td>{room.slice(0, 1)}</td>
-                    <td>$ {subtotal}</td>
-                  </tr>
-                </tbody>
-              </>
-            );
-          })}
-        </Table>
-        <div className="mt-5 pt-5">
-          <Link to="/checkout">
-            <button className="simple-btn px-4 py-3">
-              Procced to checkout
-            </button>
-          </Link>
+      <Container className="my-5">
+        <div className="row">
+          <div className="col-12">
+            <div className="row">
+              <div className="col-12 my-5">
+                {allBookings.map((bookings) => (
+                  <CartItem
+                    key={bookings._id}
+                    bookings={bookings}
+                    handleDeleteBooking={handleDeleteBooking}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="col-12 my-5">
+            <div className='cart-totals'>
+              <div>
+                <h2 className='mb-5'>Cart Totals</h2>
+                <p>Items (0)</p>
+                <p>Subtotal:</p>
+                <p>Total: </p>
+              </div>
+              <Link to="/checkout">
+                <button className="simple-btn px-4 py-3">
+                  Procced to checkout
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </Container>
     </>

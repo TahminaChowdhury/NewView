@@ -1,0 +1,28 @@
+.bookings img {
+  width: 150px;
+  height: 120px;
+  object-fit: cover;
+}
+.bookings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+}
+.bookings p {
+  margin: 0;
+  padding: 0;
+}
+.delete-btn {
+  outline: 0;
+  border: 0;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+.room-name {
+  font-size: 25px;
+}
+.details {
+  font-size: 17px;
+}

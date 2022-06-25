@@ -2,13 +2,16 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hook/useAuth';
+import { RiLogoutCircleLine } from 'react-icons/ri';
+import { FaUserAlt } from 'react-icons/fa';
+import { CgShoppingCart } from 'react-icons/cg';
 
 import './NavBar.css';
 
 const NavBar = () => {
   const { user, logout } = useAuth();
   return (
-    <div className="nav-container">
+    <div>
       <Navbar bg="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#" className="text-white">
@@ -17,22 +20,20 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
-              className="my-2 my-lg-0 nav"
+              className="ms-auto my-2 my-lg-0 nav"
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
               <Link to="/home">HOME</Link>
               <Link to="/allrooms">ROOMS</Link>
               <Link to="/contact">CONTACT</Link>
-            </Nav>
-            <Nav className="ms-auto">
+              <Link to="/cart">
+                <CgShoppingCart />
+              </Link>
               {user?.email ? (
                 <div>
-                  <button
-                    onClick={logout}
-                    className="logout-btn px-3 py-2 ms-5"
-                  >
-                    LOGOUT
+                  <button onClick={logout} className="logout-btn ms-5">
+                    <RiLogoutCircleLine />
                   </button>
                   <img
                     src={
@@ -45,7 +46,9 @@ const NavBar = () => {
                   />
                 </div>
               ) : (
-                <Link to="/login">LOGIN</Link>
+                <Link className="login-link" to="/login">
+                  <FaUserAlt />
+                </Link>
               )}
             </Nav>
           </Navbar.Collapse>

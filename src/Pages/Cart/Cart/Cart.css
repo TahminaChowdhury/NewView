@@ -1,24 +1,5 @@
-.bookings img {
-  width: 150px;
-  height: 120px;
-  object-fit: cover;
-}
-.bookings {
-  display: flex;
-}
-.bookings p {
-  margin: 0;
-  padding: 0;
-}
-.delete-btn{
-  outline: 0;
-  border: 0;
-  background: none;
-  font-size: 30px;
-}
-.room-name {
-  font-size: 25px;
-}
-.details {
-  font-size: 17px;
+.cart-totals p {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 0px;
 }

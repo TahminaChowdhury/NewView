@@ -23,7 +23,6 @@ const CheckOut = () => {
       .then((data) => setAllBookings(data));
   }, []);
 
-
   return (
     <>
       <div className="bg">
