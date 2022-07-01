@@ -6,7 +6,7 @@ const data = [
         size: 30,
         price: 199,
         img: "https://i.ibb.co/B3dD84V/111-Lexow-Ave-Aug18-1074.jpg",
-        aminities: [
+        amenities: [
             {
                 img: "https://i.ibb.co/JC1rm3v/balcony.png",
                 name: "Balcony or Terrace"
@@ -28,7 +28,7 @@ const data = [
         size: 70,
         price: 299,
         img: "https://i.ibb.co/dt7wKJm/Modern-interior-of-bedroom-with-beige-blue-and-yellow-colors-3d-render.jpg",
-        aminities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
+        amenities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
     },
     {
         name: "Deluxe room",
@@ -37,7 +37,7 @@ const data = [
         size: 50,
         price: 399,
         img: "https://i.ibb.co/PgV9YBV/puuwai-design-build-kukuiula-kauai-poipu-ethan-tweedie-photography-architectural-photography-3.jpg",
-        aminities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
+        amenities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
     },
     {
         name: "Luxury Suite room",
@@ -46,7 +46,7 @@ const data = [
         size: 120,
         price: 499,
         img: "https://i.ibb.co/5RXvgCt/HD-wallpaper-luxury-tropical-modern-contemporary-bedroom-with-sea-view-polynesia-polynesia-bedroom-s.jpg",
-        aminities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
+        amenities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
     }
 ]
 

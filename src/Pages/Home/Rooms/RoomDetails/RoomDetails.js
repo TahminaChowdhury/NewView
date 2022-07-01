@@ -16,10 +16,9 @@ const RoomDetails = () => {
             .then(data => setRoomDetails(data))
     }, [id])
     const { img, name, price, description, aminities } = roomDetails;
-    console.log(aminities);
 
     useEffect(() => {
-        fetch(`https://pacific-sea-24561.herokuapp.com/rooms`)
+        fetch('https://pacific-sea-24561.herokuapp.com/rooms')
             .then(res => res.json())
             .then(data => {
                 const roomsCollection = data.filter(room => room._id !== id)

@@ -1,34 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './Rooms.css';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
+import { useSelector, useDispatch } from 'react-redux';
+import { getRooms } from '../../../redux/Rooms/roomActions';
+import { Spinner } from 'react-bootstrap';
 import Room from './Room/Room';
-import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 
 const Rooms = () => {
-  const [rooms, setRooms] = useState([]);
+  const dispatch = useDispatch();
+  const roomsData = useSelector((state) => state.room);
+  const { loading, rooms, error } = roomsData;
 
   useEffect(() => {
-    fetch('https://pacific-sea-24561.herokuapp.com/rooms')
-      .then((res) => res.json())
-      .then((data) => setRooms(data));
-  }, []);
+    dispatch(getRooms());
+  }, [dispatch]);
 
-  const NextArrow = ({ onClick }) => {
-    return (
-      <div className="arrow next activeSlide" onClick={onClick}>
-        <AiOutlineRight />
-      </div>
-    );
-  };
+  // const NextArrow = ({ onClick }) => {
+  //   return (
+  //     <div className="arrow next activeSlide" onClick={onClick}>
+  //       <AiOutlineRight />
+  //     </div>
+  //   );
+  // };
 
-  const PrevArrow = ({ onClick }) => {
-    return (
-      <div className="arrow previous" onClick={onClick}>
-        <AiOutlineLeft />
-      </div>
-    );
-  };
+  // const PrevArrow = ({ onClick }) => {
+  //   return (
+  //     <div className="arrow previous" onClick={onClick}>
+  //       <AiOutlineLeft />
+  //     </div>
+  //   );
+  // };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -72,9 +75,9 @@ const Rooms = () => {
       <div className="my-5">
         <div className="row">
           <div className="d-flex justify-content-between my-5">
-          <div className='d-flex align-items-center'>
-            <span className='divider '></span>
-            <h1 className='ps-4 fw-bold'>Our Rooms</h1>
+            <div className="d-flex align-items-center">
+              <span className="divider "></span>
+              <h1 className="ps-4 fw-bold">Our Rooms</h1>
             </div>
             <div>
               <Link to="/allrooms">
@@ -82,11 +85,14 @@ const Rooms = () => {
               </Link>
             </div>
           </div>
-
           <Slider {...settings}>
-            {rooms.map((room) => (
-              <Room key={room._id} room={room}></Room>
-            ))}
+            {loading ? (
+              <Spinner animation="grow" />
+            ) : error ? (
+              <h2>{error}</h2>
+            ) : (
+              rooms.data.map((room) => <Room room={room} />)
+            )}
           </Slider>
         </div>
       </div>

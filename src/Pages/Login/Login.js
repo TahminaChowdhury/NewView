@@ -6,7 +6,6 @@ import './Login.css';
 
 const Login = () => {
   const {
-    user,
     loginWithGoogle,
     loginWithFacebook,
     loginWithEmailAndPassword,

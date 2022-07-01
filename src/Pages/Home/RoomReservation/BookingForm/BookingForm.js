@@ -11,7 +11,6 @@ const BookingForm = (props) => {
   const { name, img, price } = props;
   const { register, handleSubmit } = useForm();
   const [bookingSuccessful, setBookingSuccessful] = useState(false);
-  console.log(bookingSuccessful);
 
   const onSubmit = (data) => {
     data.email = user.email;

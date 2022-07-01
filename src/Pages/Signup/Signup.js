@@ -5,7 +5,6 @@ import useAuth from '../../Hook/useAuth';
 
 const SignUp = () => {
   const {
-    user,
     loginWithGoogle,
     loginWithFacebook,
     signupWithEmailAndPassword,
