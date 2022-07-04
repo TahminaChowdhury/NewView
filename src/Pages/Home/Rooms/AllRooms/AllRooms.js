@@ -4,33 +4,35 @@ import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import BookingForm from '../../RoomReservation/BookingForm/BookingForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { getRooms } from '../../../../redux/Rooms/roomActions';
 
 
 const AllRooms = () => {
-  const [allRooms, setAllRooms] = useState([]);
   const [visibleRooms, setVisibleRooms] = useState(2);
+  const dispatch = useDispatch();
+  const roomsData = useSelector((state) => state.room);
+  const { loading, rooms, error } = roomsData;
 
   useEffect(() => {
-    fetch('https://pacific-sea-24561.herokuapp.com/rooms')
-      .then((res) => res.json())
-      .then((data) => setAllRooms(data));
-  }, []);
+    dispatch(getRooms());
+  }, [dispatch]);
+  
+
+ 
 
   const showMoreRooms = () => {
     setVisibleRooms((preValue) => preValue + 2);
   };
   return (
     <>
-      <div className="row">
-        <div className="col-sm-12 col-md-12">
-          
-        </div>
+      <div className="row my-5">
         <div className="col-sm-12 col-md-12">
           <Container>
             <div className="row">
               <div className="col-sm-12 col-md-8">
                 <div>
-                  {allRooms.slice(0, visibleRooms).map((singleRoom) => {
+                  {rooms.slice(0, visibleRooms).map((singleRoom) => {
                     const { _id, name, img, description } = singleRoom;
                     return (
                       <div key={_id} className="row rooms-container">

@@ -14,7 +14,7 @@
     height: 600px;
     object-fit: cover;
 }
-.input-field input, textarea{
+.contact-input-field input, textarea{
     width: 100%;
     color: black;
     background-color: white;
