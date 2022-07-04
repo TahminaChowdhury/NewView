@@ -6,8 +6,8 @@ export const getRooms = () => async (dispatch) => {
     dispatch({
       type: actionType.GET_ROOMS_REQUEST,
     });
-    const data = await axios.get(
-      'https://pacific-sea-24561.herokuapp.com/rooms'
+    const {data} = await axios.get(
+      'http://localhost:5000/rooms'
     );
 
     dispatch({
@@ -30,7 +30,7 @@ export const getRoomDetails = (id) => async (dispatch) => {
     dispatch({
       type: actionType.GET_ROOM_DETAILS_REQUEST,
     });
-    const data = await axios.get(
+    const {data} = await axios.get(
       `http://localhost:5000/rooms/${id}`
     );
 

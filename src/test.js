@@ -5,6 +5,7 @@ const data = [
         accomodation: "2 adults 1 children",
         size: 30,
         price: 199,
+        availableRoom: 5,
         img: "https://i.ibb.co/B3dD84V/111-Lexow-Ave-Aug18-1074.jpg",
         amenities: [
             {
@@ -27,6 +28,7 @@ const data = [
         accomodation: "3 adults 2 children",
         size: 70,
         price: 299,
+        availableRoom: 5,
         img: "https://i.ibb.co/dt7wKJm/Modern-interior-of-bedroom-with-beige-blue-and-yellow-colors-3d-render.jpg",
         amenities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
     },
@@ -36,6 +38,7 @@ const data = [
         accomodation: "3 adults 1 children",
         size: 50,
         price: 399,
+        availableRoom: 5,
         img: "https://i.ibb.co/PgV9YBV/puuwai-design-build-kukuiula-kauai-poipu-ethan-tweedie-photography-architectural-photography-3.jpg",
         amenities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
     },
@@ -45,6 +48,7 @@ const data = [
         accomodation: "4 adults 2 children",
         size: 120,
         price: 499,
+        availableRoom: 5,
         img: "https://i.ibb.co/5RXvgCt/HD-wallpaper-luxury-tropical-modern-contemporary-bedroom-with-sea-view-polynesia-polynesia-bedroom-s.jpg",
         amenities: ["Balcony or Terrace", "Flat Screen TV", "Ironing Board", "Saving Safe","Telephone", "Wifi Access", "Breakfast Included", "Hairdryer", "Kettle Tea", "Shower bathtub", "Towel Warmer", "Writing Desk"]
     }

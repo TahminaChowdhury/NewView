@@ -22,6 +22,7 @@ const AboutUs = () => {
               reviews. At the end of the day, you want to give your guests the
               perfect experience, and that begins with winning the right ones
               over.
+              <p/>
               <p className="mt-5">
                 There may be nothing wrong with anything you do, but will a
                 family care about heated bathroom floors if there are no

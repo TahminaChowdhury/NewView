@@ -87,11 +87,11 @@ const Rooms = () => {
           </div>
           <Slider {...settings}>
             {loading ? (
-              <Spinner animation="grow" />
+              <h2>Loading...</h2>
             ) : error ? (
               <h2>{error}</h2>
             ) : (
-              rooms.data.map((room) => <Room room={room} />)
+              rooms.map((room) => <Room key={room._id} room={room} />)
             )}
           </Slider>
         </div>

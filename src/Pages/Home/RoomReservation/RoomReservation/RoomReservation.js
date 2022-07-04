@@ -5,7 +5,8 @@ import Calender from '../Calender/Calender';
 import './RoomReservation.css';
 
 const RoomReservation = (props) => {
-  const { _id, name, img, price } = props.roomDetails;
+  const { _id, name, img, price, availableRoom } = props.room;
+
   return (
     <div>
       <div className="row my-5">
@@ -16,9 +17,11 @@ const RoomReservation = (props) => {
         <div className="col-sm-12 col-md-4 col-lg-4">
           <BookingForm
             key={_id}
+            id={_id}
             name={name}
             img={img}
             price={price}
+            availableRoom={availableRoom}
           ></BookingForm>
         </div>
       </div>

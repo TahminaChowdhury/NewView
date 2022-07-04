@@ -35,16 +35,16 @@ const Footer = () => {
                   Follow us on social media and keep in touch with The New View
                 </p>
                 <span>
-                  <i class="fab fa-facebook facebook-icon"></i>
+                  <i className="fab fa-facebook facebook-icon"></i>
                 </span>
                 <span>
-                  <i class="fab fa-instagram social-icon"></i>
+                  <i className="fab fa-instagram social-icon"></i>
                 </span>
                 <span>
-                  <i class="fab fa-twitter social-icon"></i>
+                  <i className="fab fa-twitter social-icon"></i>
                 </span>
                 <span>
-                  <i class="fab fa-youtube social-icon"></i>
+                  <i className="fab fa-youtube social-icon"></i>
                 </span>
               </div>
             </div>

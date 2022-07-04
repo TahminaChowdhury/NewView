@@ -2,21 +2,22 @@ import * as actionTypes from './cartConstants';
 import axios from 'axios';
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
-  const data = await axios.get(
-    `https://pacific-sea-24561.herokuapp.com/rooms/${id}`
+  const { data } = await axios.get(
+    `http://localhost:5000/rooms/${id}`
   );
 
   dispatch({
     type: actionTypes.ADD_TO_CART,
     payload: {
       id: data._id,
-      name: data.name,
-      description: data.description,
-      accomodation: data.accomodation,
-      size: data.size,
-      price: data.price,
       img: data.img,
-      amenities: data.amenities,
+      name: data.name,
+      price: data.price,
+      checkInDate: data.checkInDate,
+      checkOutDate: data.checkOutDate,
+      adults: data.adults,
+      children: data.children,
+      availableRoom: data.availableRoom,
       qty,
     },
   });

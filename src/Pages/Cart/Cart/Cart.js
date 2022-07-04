@@ -1,42 +1,31 @@
 import React from 'react';
-import './Cart.css'
+import './Cart.css';
 import { Container } from 'react-bootstrap';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import useAuth from '../../../Hook/useAuth';
-import CartItem from './CartItem/CartItem';
 import { Link } from 'react-router-dom';
-import Table from 'react-bootstrap/Table';
+import { useDispatch, useSelector } from 'react-redux';
+import CartItem from './CartItem/CartItem';
+import { addToCart, removeFromCart } from '../../../redux/Cart/cartActions';
 
 const Cart = () => {
-  const { user } = useAuth();
-  const [allBookings, setAllBookings] = useState([]);
-  const [isDelete, setIsDelete] = useState(false);
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const { cartItems } = cart;
 
-  useEffect(() => {
-    fetch(`https://pacific-sea-24561.herokuapp.com/bookings/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => setAllBookings(data));
-  }, [isDelete]);
-
-  const handleDeleteBooking = (id) => {
-    fetch(`https://pacific-sea-24561.herokuapp.com/bookings/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'content-type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount) {
-          alert('Are you sure you want to delete?');
-          setIsDelete(true);
-        } else {
-          setIsDelete(false);
-        }
-      });
+  const qtyChangeHandler = (id, qty) => {
+    dispatch(addToCart(id, qty));
   };
 
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id));
+  };
+
+  const getCartCount = () => {
+    return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+  };
+
+  const getCartSubtotal = () => {
+    return cartItems.reduce((price, item) => item.price * item.qty + price, 0);
+  };
   return (
     <>
       <div className="bg">
@@ -49,23 +38,30 @@ const Cart = () => {
           <div className="col-12">
             <div className="row">
               <div className="col-12 my-5">
-                {allBookings.map((bookings) => (
-                  <CartItem
-                    key={bookings._id}
-                    bookings={bookings}
-                    handleDeleteBooking={handleDeleteBooking}
-                  />
-                ))}
+                {cartItems.length === 0 ? (
+                  <h2>
+                    Your cart is empty <Link to="/allrooms">Go back</Link>
+                  </h2>
+                ) : (
+                  cartItems.map((bookings) => (
+                    <CartItem
+                      key={bookings._id}
+                      bookings={bookings}
+                      qtyChangeHandler={qtyChangeHandler}
+                      removeFromCartHandler={removeFromCartHandler}
+                    />
+                  ))
+                )}
               </div>
             </div>
           </div>
           <div className="col-12 my-5">
-            <div className='cart-totals'>
+            <div className="cart-totals">
               <div>
-                <h2 className='mb-5'>Cart Totals</h2>
-                <p>Items (0)</p>
-                <p>Subtotal:</p>
-                <p>Total: </p>
+                <h2 className="mb-5">Cart Totals</h2>
+                <p>Items ({getCartCount()})</p>
+                <p>Subtotal: {getCartSubtotal().toFixed(2)}</p>
+                <p>Total: {getCartSubtotal().toFixed(2)}</p>
               </div>
               <Link to="/checkout">
                 <button className="simple-btn px-4 py-3">

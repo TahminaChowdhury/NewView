@@ -56,8 +56,8 @@ const Banner = () => {
                   Rooms
                   <br />
                   <span>
-                    <select {...register('room')} className="room-option">
-                      <option value="1 Room" selected>
+                    <select {...register('room')} value="1 Room" selected className="room-option">
+                      <option>
                         1 Room
                       </option>
                       <option value="2 Room">2 Room</option>
@@ -86,8 +86,8 @@ const Banner = () => {
                   Children
                   <br />
                   <span>
-                    <select {...register('children')} className="select-field">
-                      <option value="0 Children" selected>
+                    <select {...register('children')}  value="0 Children" selected className="select-field">
+                      <option>
                         0 Children
                       </option>
                       <option value="1 Children">1 Children</option>

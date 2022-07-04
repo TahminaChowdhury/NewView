@@ -5,12 +5,18 @@ import { useState } from 'react';
 import useAuth from '../../../../Hook/useAuth';
 import { Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { addToCart } from '../../../../redux/Cart/cartActions';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const BookingForm = (props) => {
   const { user } = useAuth();
-  const { name, img, price } = props;
+  const { id, name, img, price, availableRoom } = props;
+  const [qty, setQty] = useState(1);
+
   const { register, handleSubmit } = useForm();
   const [bookingSuccessful, setBookingSuccessful] = useState(false);
+  const dispatch = useDispatch();
 
   const onSubmit = (data) => {
     data.email = user.email;
@@ -31,6 +37,11 @@ const BookingForm = (props) => {
           setBookingSuccessful(false);
         }
       });
+  };
+  const navigate = useNavigate();
+  const addToCartHandler = () => {
+    dispatch(addToCart(id, qty));
+    navigate('/cart');
   };
 
   return (
@@ -69,12 +80,17 @@ const BookingForm = (props) => {
               Rooms
               <br />
               <span>
-                <select {...register('room')} className="room-filed">
-                  <option value="1" selected>
-                    1 Room
-                  </option>
-                  <option value="2">2 Rooms</option>
-                  <option value="3">3 Rooms</option>
+                <select
+                  {...register('room')}
+                  value={qty}
+                  onChange={(e) => setQty(e.target.value)}
+                  className="room-filed"
+                >
+                  {[...Array(availableRoom).keys()].map((x) => (
+                    <option key={x + 1} value={x + 1}>
+                      {x + 1} Rooms
+                    </option>
+                  ))}
                 </select>
               </span>
             </label>
@@ -84,8 +100,8 @@ const BookingForm = (props) => {
               Adults
               <br />
               <span>
-                <select {...register('adults')} className="option-field">
-                  <option value="1 Adults" selected>
+                <select {...register('adults')} value="1 Adults" selected className="option-field">
+                  <option>
                     1 Adults
                   </option>
                   <option value="2 Adults">2 Adults</option>
@@ -99,8 +115,8 @@ const BookingForm = (props) => {
               Children
               <br />
               <span>
-                <select {...register('children')} className="option-field">
-                  <option value="0 Children" selected>
+                <select {...register('children')} value="0 Children" selected className="option-field">
+                  <option>
                     0 Children
                   </option>
                   <option value="1 Children">1 Children</option>
@@ -116,7 +132,11 @@ const BookingForm = (props) => {
             <h4>Your price</h4>
             <h5>$ {price} / per room</h5>
           </div>
-          <button type="submit" className="signIn-btn mt-4 px-3 py-2">
+          <button
+            type="submit"
+            onClick={addToCartHandler}
+            className="signIn-btn mt-4 px-3 py-2"
+          >
             BOOK NOW
           </button>
         </form>
