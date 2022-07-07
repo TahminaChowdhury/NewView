@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 import { postBooking } from '../../../redux/Bookings/bookingAction';
+import { useNavigate } from 'react-router-dom';
 
 const CheckOut = () => {
   const dispatch = useDispatch();
@@ -25,9 +26,12 @@ const CheckOut = () => {
   const onSubmit = (data) => {
     dispatch(postBooking(data));
   };
-
-  if (isResponse) {
-    alert('You booking is confiremd');
+  const navigate = useNavigate()
+  const responseHandler = () => {
+    if (isResponse) {
+      alert('You booking is confiremd');
+      navigate('/home')
+    }
   }
   return (
     <>
@@ -191,6 +195,7 @@ const CheckOut = () => {
               <div className="mt-5">
                 <input
                   type="submit"
+                  onClick={() => responseHandler()}
                   className="simple-btn px-4 py-3"
                   value="Confrim Reservation"
                 />
