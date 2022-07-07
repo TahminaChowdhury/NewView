@@ -9,7 +9,7 @@ export const postBooking = (request) => async (dispatch) => {
   });
 
   const { data } = await axios.post(
-    'https://secret-tor-33279.herokuapp.com/bookings',
+    'https://stark-island-71268.herokuapp.com/bookings',
     request
   );
   dispatch({
@@ -26,7 +26,7 @@ export const getBookings = () => async (dispatch) => {
     });
 
     const { data } = await axios.get(
-      'https://secret-tor-33279.herokuapp.com/bookings'
+      'https://stark-island-71268.herokuapp.com/bookings'
     );
     dispatch({
       type: actionTypes.GET_BOOKINGS_SUCCESS,

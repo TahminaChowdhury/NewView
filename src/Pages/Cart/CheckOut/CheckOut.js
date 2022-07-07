@@ -2,23 +2,33 @@ import React from 'react';
 import './CheckOut.css';
 import { Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { addToCart } from '../../../redux/Cart/cartActions';
+import { useSelector, useDispatch } from 'react-redux';
+import { postBooking } from '../../../redux/Bookings/bookingAction';
 
 const CheckOut = () => {
   const dispatch = useDispatch();
   const booking = useSelector((state) => state.cart);
+  const isResponse = useSelector((state) => state.postBookings);
+
   const { cartItems } = booking;
-  console.log(cartItems);
+
+  // Cart subtotal count
+  const getCartSubtotal = () => {
+    return cartItems.reduce((price, item) => item.price * item.qty + price, 0);
+  };
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    dispatch(postBooking(data));
+  };
 
+  if (isResponse) {
+    alert('You booking is confiremd');
+  }
   return (
     <>
       <div className="bg">
@@ -37,7 +47,7 @@ const CheckOut = () => {
                     <h2 className="mb-5">Billing Deatils</h2>
 
                     <div className="mb-4">
-                      <label htmlFor="">First name</label>
+                      <label htmlFor="">Full name</label>
                       <br />
                       <input
                         type="text"
@@ -135,11 +145,48 @@ const CheckOut = () => {
               {/* Reservetion info */}
               <div className="col-12 my-5">
                 <h3 className="mb-5">Your Reservation</h3>
-                <div></div>
+                <div className="row item-border">
+                  <div className="col-6">
+                    {cartItems.map((item) => {
+                      return (
+                        <div key={item.id}>
+                          <h4>
+                            {item.name} * {item.qty}
+                          </h4>
+                          <p className="details">
+                            Reservation: {item.checkInDate}, {item.checkOutDate}
+                          </p>
+                          <p className="details">Guests: {item.adults} </p>
+                          <p className="details mb-3">
+                            Price: $ {item.price} / Per room
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="col-6">
+                    <div>
+                      <h4>Subtotal</h4>
+                      <p className="details">
+                        $ {getCartSubtotal().toFixed(2)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div className="col-12">
+              <div className="row item-border">
+                <div className="col-6">
+                  <h4>Total</h4>
+                </div>
+                <div className="col-6">
+                  <p className="details">$ {getCartSubtotal().toFixed(2)}</p>
+                </div>
+              </div>
+
               {/* Submit Button */}
               <div className="mt-5">
                 <input

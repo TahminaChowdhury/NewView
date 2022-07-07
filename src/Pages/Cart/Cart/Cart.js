@@ -75,8 +75,8 @@ const Cart = () => {
                   <div>
                     <h2 className="mb-5">Cart Totals</h2>
                     <p>Items ({getCartCount()})</p>
-                    <p>Subtotal: {getCartSubtotal().toFixed(2)}</p>
-                    <p>Total: {getCartSubtotal().toFixed(2)}</p>
+                    <p>Subtotal: $ {getCartSubtotal().toFixed(2)}</p>
+                    <p>Total: $ {getCartSubtotal().toFixed(2)}</p>
                   </div>
                   <div className="mt-5">
                     <Link to="/checkout">
