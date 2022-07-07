@@ -18,6 +18,7 @@ import NavBar from "./Pages/Shared/NavBar/NavBar";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Cart from "./Pages/Cart/Cart/Cart"
 import CheckOut from "./Pages/Cart/CheckOut/CheckOut";
+import AboutUs from "./Pages/Home/AboutUs/AboutUs";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Routes>
          <Route path="/" element={<Home />} />
          <Route path="/home" element={<Home />} />
+         <Route path="/aboutus" element={<AboutUs />} />
          <Route path="/allrooms" element={<AllRooms />} />
          <Route path="/roomdetails/:id" element={<RoomDetails />}/>
          <Route path="/cart" element={<Cart />} />
