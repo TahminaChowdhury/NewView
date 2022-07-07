@@ -7,7 +7,7 @@ const PrivateRoute = ({ children }) => {
     const { user, loading } = useAuth();
     const location = useLocation();
     if (loading) {
-        return <div className='text-center'>
+        return <div className='text-center my-5 py-5'>
             <Spinner animation="grow" />
         </div>
     }

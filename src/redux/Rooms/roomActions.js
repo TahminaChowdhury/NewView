@@ -7,7 +7,7 @@ export const getRooms = () => async (dispatch) => {
       type: actionType.GET_ROOMS_REQUEST,
     });
     const {data} = await axios.get(
-      'http://localhost:5000/rooms'
+      'https://secret-tor-33279.herokuapp.com/rooms'
     );
 
     dispatch({
@@ -31,7 +31,7 @@ export const getRoomDetails = (id) => async (dispatch) => {
       type: actionType.GET_ROOM_DETAILS_REQUEST,
     });
     const {data} = await axios.get(
-      `http://localhost:5000/rooms/${id}`
+      `https://secret-tor-33279.herokuapp.com/rooms/${id}`
     );
 
     dispatch({

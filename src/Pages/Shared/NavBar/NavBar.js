@@ -5,11 +5,16 @@ import useAuth from '../../../Hook/useAuth';
 import { RiLogoutCircleLine } from 'react-icons/ri';
 import { FaUserAlt } from 'react-icons/fa';
 import { CgShoppingCart } from 'react-icons/cg';
-
+import { useSelector } from 'react-redux';
 import './NavBar.css';
 
 const NavBar = () => {
   const { user, logout } = useAuth();
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+  const getCartCount = () => {
+    return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+  };
   return (
     <div>
       <Navbar bg="dark" expand="lg">
@@ -28,7 +33,7 @@ const NavBar = () => {
               <Link to="/allrooms">ROOMS</Link>
               <Link to="/contact">CONTACT</Link>
               <Link to="/cart">
-                <CgShoppingCart />
+                <CgShoppingCart /> ({getCartCount()})
               </Link>
               {user?.email ? (
                 <div>

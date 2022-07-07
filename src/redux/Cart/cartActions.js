@@ -1,10 +1,8 @@
 import * as actionTypes from './cartConstants';
 import axios from 'axios';
 
-export const addToCart = (id, qty) => async (dispatch, getState) => {
-  const { data } = await axios.get(
-    `http://localhost:5000/rooms/${id}`
-  );
+export const addToCart = (id, checkInDate, checkOutDate, adults, children, qty) => async (dispatch, getState) => {
+  const { data } = await axios.get(`https://secret-tor-33279.herokuapp.com/rooms/${id}`);
 
   dispatch({
     type: actionTypes.ADD_TO_CART,
@@ -13,10 +11,10 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
       img: data.img,
       name: data.name,
       price: data.price,
-      checkInDate: data.checkInDate,
-      checkOutDate: data.checkOutDate,
-      adults: data.adults,
-      children: data.children,
+      checkInDate: checkInDate,
+      checkOutDate: checkOutDate,
+      adults: adults,
+      children: children,
       availableRoom: data.availableRoom,
       qty,
     },

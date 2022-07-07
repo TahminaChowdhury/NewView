@@ -2,48 +2,30 @@ import React from 'react';
 import './BookingForm.css';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import useAuth from '../../../../Hook/useAuth';
-import { Alert } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { addToCart } from '../../../../redux/Cart/cartActions';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { addToCart } from '../../../../redux/Cart/cartActions';
 
 const BookingForm = (props) => {
-  const { user } = useAuth();
-  const { id, name, img, price, availableRoom } = props;
+  const { id, price, availableRoom } = props;
   const [qty, setQty] = useState(1);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm();
-  const [bookingSuccessful, setBookingSuccessful] = useState(false);
-  const dispatch = useDispatch();
-
   const onSubmit = (data) => {
-    data.email = user.email;
-    data.name = name;
-    data.img = img;
-    data.price = price;
-
-    fetch('https://pacific-sea-24561.herokuapp.com/bookings', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged === 'true') {
-          setBookingSuccessful(true);
-        } else {
-          setBookingSuccessful(false);
-        }
-      });
-  };
-  const navigate = useNavigate();
-  const addToCartHandler = () => {
-    dispatch(addToCart(id, qty));
+    dispatch(
+      addToCart(
+        id,
+        data.checkInDate,
+        data.checkOutDate,
+        data.adults,
+        data.children,
+        qty
+      )
+    );
     navigate('/cart');
   };
-
   return (
     <div>
       <div className="booking-form p-4">
@@ -100,8 +82,8 @@ const BookingForm = (props) => {
               Adults
               <br />
               <span>
-                <select {...register('adults')} value="1 Adults" selected className="option-field">
-                  <option>
+                <select {...register('adults')} className="option-field">
+                  <option value="1 Adults" selected>
                     1 Adults
                   </option>
                   <option value="2 Adults">2 Adults</option>
@@ -115,8 +97,8 @@ const BookingForm = (props) => {
               Children
               <br />
               <span>
-                <select {...register('children')} value="0 Children" selected className="option-field">
-                  <option>
+                <select {...register('children')} className="option-field">
+                  <option value="0 Children" selected>
                     0 Children
                   </option>
                   <option value="1 Children">1 Children</option>
@@ -132,26 +114,12 @@ const BookingForm = (props) => {
             <h4>Your price</h4>
             <h5>$ {price} / per room</h5>
           </div>
-          <button
-            type="submit"
-            onClick={addToCartHandler}
-            className="signIn-btn mt-4 px-3 py-2"
-          >
+
+          {/* Book now button */}
+          <button type="submit" className="signIn-btn mt-4 px-3 py-2">
             BOOK NOW
           </button>
         </form>
-      </div>
-      <div className="mt-3">
-        {bookingSuccessful ? (
-          <div>
-            <Alert className="alert" variant="warning">
-              You successfully add a room reservation into{' '}
-              <Link to="/cart">Cart</Link>.Give it a click.
-            </Alert>
-          </div>
-        ) : (
-          ''
-        )}
       </div>
     </div>
   );

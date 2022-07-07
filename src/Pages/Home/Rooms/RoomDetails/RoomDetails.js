@@ -13,7 +13,6 @@ const RoomDetails = () => {
   const { room } = roomDetailsData;
   const { img, name, price, description} = room;
 
-
   useEffect(() => {
     dispatch(getRoomDetails(id));
   }, [dispatch]);
@@ -36,23 +35,14 @@ const RoomDetails = () => {
                 <p className="my-4">{description}</p>
               </div>
               <hr />
-              <div className="aminities">
+              {/* <div className="aminities">
                 <h3 className="my-5">Amenities</h3>
                 <div></div>
               </div>
-              <hr />
+              <hr /> */}
               <RoomReservation room={room}></RoomReservation>
             </div>
           </div>
-
-          {/* <div className="col-12">
-            <div className="row">
-              <h3 className="my-5">Related Rooms</h3>
-              {
-                                    rooms.map(roomsData => <RelatedRooms key={roomsData._id} roomsData={roomsData}></RelatedRooms>)
-                                } 
-            </div>
-          </div> */}
         </div>
       </Container>
     </>

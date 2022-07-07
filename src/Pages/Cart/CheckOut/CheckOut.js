@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import useAuth from '../../../Hook/useAuth';
+import React from 'react';
 import './CheckOut.css';
-import Table from 'react-bootstrap/Table';
 import { Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { addToCart } from '../../../redux/Cart/cartActions';
 
 const CheckOut = () => {
-  const { user } = useAuth();
-  const [allBookings, setAllBookings] = useState([]);
+  const dispatch = useDispatch();
+  const booking = useSelector((state) => state.cart);
+  const { cartItems } = booking;
+  console.log(cartItems);
 
   const {
     register,
@@ -15,13 +18,6 @@ const CheckOut = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
-
-  // Fetch all bookings data
-  useEffect(() => {
-    fetch(`https://pacific-sea-24561.herokuapp.com/bookings/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => setAllBookings(data));
-  }, []);
 
   return (
     <>
@@ -135,53 +131,14 @@ const CheckOut = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Reservetion info */}
               <div className="col-12 my-5">
                 <h3 className="mb-5">Your Reservation</h3>
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Product</th>
-                      <th>Subtotal</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {allBookings.map((bookings) => {
-                      const {
-                        _id,
-                        name,
-                        price,
-                        room,
-                        checkInDate,
-                        checkOutDate,
-                        adults,
-                      } = bookings;
-                      const subtotal = price * parseInt(room);
-                      return (
-                        <>
-                          <tr>
-                            <td>
-                              <div key={_id} className="bookings my-3">
-                                <div></div>
-                                <div className="ms-3">
-                                  <p className="mb-4 room-name">
-                                    {name} * {room.slice(0, 1)}
-                                  </p>
-                                  <p className="details">
-                                    Reservation: {checkInDate}, {checkOutDate}
-                                  </p>
-                                  <p className="details">Guests: {adults} </p>
-                                </div>
-                              </div>
-                            </td>
-                            <td>$ {subtotal}</td>
-                          </tr>
-                        </>
-                      );
-                    })}
-                  </tbody>
-                </Table>
+                <div></div>
               </div>
             </div>
+
             <div className="col-12">
               {/* Submit Button */}
               <div className="mt-5">
