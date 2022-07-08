@@ -16,19 +16,13 @@ const NavBar = () => {
     return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
   };
   return (
-    <div>
-      <Navbar bg="dark" expand="lg">
+    <>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#" className="text-white">
-            THE NEW VIEW
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="ms-auto my-2 my-lg-0 nav"
-              style={{ maxHeight: '100px' }}
-              navbarScroll
-            >
+          <Navbar.Brand href="#home" className='brand-name'>THE NEW VIEW</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="ms-auto nav">
               <Link to="/home">HOME</Link>
               <Link to="/allrooms">ROOMS</Link>
               <Link to="/contact">CONTACT</Link>
@@ -51,7 +45,7 @@ const NavBar = () => {
                   />
                 </div>
               ) : (
-                <Link className="login-link" to="/login">
+                <Link className="login-link text-dark" to="/login">
                   <FaUserAlt />
                 </Link>
               )}
@@ -59,7 +53,7 @@ const NavBar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
+    </>
   );
 };
 

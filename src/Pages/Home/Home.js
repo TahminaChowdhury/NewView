@@ -10,7 +10,7 @@ import Gallery from './Gallery/Gallery';
 
 const Home = () => {
   return (
-    <div>
+    <div id='home'>
       <Banner></Banner>
       <AboutUs></AboutUs>
       <Rooms></Rooms>

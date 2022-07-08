@@ -28,3 +28,8 @@
     border: 2px solid var(--light);
   }
 }
+@media (max-width: 500px) {
+  .modern-bedroom-img{
+    margin-top: 30px;
+  }
+}

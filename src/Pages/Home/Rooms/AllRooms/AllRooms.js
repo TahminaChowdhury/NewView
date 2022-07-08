@@ -60,7 +60,7 @@ const AllRooms = () => {
                   })}
 
                   {/* Load more button */}
-                  <div className="text-center">
+                  <div className="text-center load-more-btn-div">
                     <button onClick={showMoreRooms} className="load-more-btn">
                       Load More
                     </button>

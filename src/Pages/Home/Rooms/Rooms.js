@@ -74,12 +74,12 @@ const Rooms = () => {
     <div className="mx-5 rooms-section">
       <div className="my-5">
         <div className="row">
-          <div className="d-flex justify-content-between my-5">
+          <div className="rooms-heading my-5">
             <div className="d-flex align-items-center">
               <span className="divider "></span>
               <h1 className="ps-4 fw-bold">Our Rooms</h1>
             </div>
-            <div>
+            <div className='view-rooms-div'>
               <Link to="/allrooms">
                 <button className="regular-btn">View All Rooms</button>
               </Link>

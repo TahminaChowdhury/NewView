@@ -36,3 +36,11 @@
     background-color: #F5F5F5;
     letter-spacing: 2px;
 }
+@media (max-width: 500px) {
+  .card{
+    height: 600px;
+  }
+  .view-romms-btn{
+    
+  }
+}

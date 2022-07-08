@@ -29,20 +29,24 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <div>
+      <div className="bg">
+        <Container>
+          <h2 className="title">Contact</h2>
+        </Container>
+      </div>
       <Container>
-        <div className="col-12 contact-bg"></div>
-        <div className="row contact-container my-5">
+        <div className="row contact-form-container my-5">
           <div className="col-sm-12 col-md-6 col-lg-6">
-            <div className="contact-img">
-              <img src={img} alt="" />
+            <div className="contact-form-img">
+              <img src={img} className="img-fluid" alt="" />
             </div>
           </div>
           <div className="col-sm-12 col-md-6 col-lg-6">
             {submit && (
               <Alert variant="secondary">Message sent successfully</Alert>
             )}
-            <div>
+            <div className="contact-form">
               <h1>Get in touch</h1>
               <p className="py-3">
                 Please complete the form below we will contact with you shortly.
@@ -113,7 +117,7 @@ const Contact = () => {
           </div>
         </div>
       </Container>
-    </>
+    </div>
   );
 };
 

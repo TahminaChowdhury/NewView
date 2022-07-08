@@ -29,3 +29,8 @@
   font-weight: bold;
   letter-spacing: 2px;
 }
+@media (max-width: 500px) {
+ .load-more-btn-div{
+  margin-bottom: 50px;
+ }
+}

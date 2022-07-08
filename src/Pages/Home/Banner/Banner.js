@@ -16,16 +16,28 @@ const Banner = () => {
       <div className="banner">
         <Carousel>
           <Carousel.Item interval={1000}>
-            <img className="d-block w-100" src={img1} alt="First slide" />
+            <img
+              className="d-block w-100 img-fluid"
+              src={img1}
+              alt="First slide"
+            />
             {/* <Carousel.Caption className='carousel-caption'>
                         
                     </Carousel.Caption> */}
           </Carousel.Item>
           <Carousel.Item interval={1000}>
-            <img className="d-block w-100" src={img2} alt="Second slide" />
+            <img
+              className="d-block w-100 img-fluid"
+              src={img2}
+              alt="Second slide"
+            />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="d-block w-100" src={img3} alt="Third slide" />
+            <img
+              className="d-block w-100 img-fluid"
+              src={img3}
+              alt="Third slide"
+            />
           </Carousel.Item>
         </Carousel>
       </div>
@@ -56,10 +68,13 @@ const Banner = () => {
                   Rooms
                   <br />
                   <span>
-                    <select {...register('room')} value="1 Room" selected className="room-option">
-                      <option>
-                        1 Room
-                      </option>
+                    <select
+                      {...register('room')}
+                      value="1 Room"
+                      selected
+                      className="room-option"
+                    >
+                      <option>1 Room</option>
                       <option value="2 Room">2 Room</option>
                       <option value="3 Room">3 Room</option>
                     </select>
@@ -86,10 +101,13 @@ const Banner = () => {
                   Children
                   <br />
                   <span>
-                    <select {...register('children')}  value="0 Children" selected className="select-field">
-                      <option>
-                        0 Children
-                      </option>
+                    <select
+                      {...register('children')}
+                      value="0 Children"
+                      selected
+                      className="select-field"
+                    >
+                      <option>0 Children</option>
                       <option value="1 Children">1 Children</option>
                       <option value="2 Children">2 Children</option>
                       <option value="3 Children">3 Children</option>

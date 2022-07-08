@@ -7,7 +7,7 @@ import CountUp from 'react-countup';
 
 const AboutUs = () => {
   return (
-    <div className="mx-5 about-container " id='aboutus'>
+    <div className="mx-5 about-container">
       <div className="row">
         <div className="col-sm-12 col-md-6">
           <div className="text-start pe-5">
