@@ -1,4 +1,4 @@
-.brand-name{
+.brand-name {
   font-size: 20px;
 }
 .nav a {
@@ -6,12 +6,9 @@
   color: white;
   margin-left: 50px;
   font-size: 15px;
-  line-height: 35px;
+  line-height: 30px;
   font-weight: 500;
   letter-spacing: 0.25em;
-}
-.navbar {
-  height: 90px;
 }
 .logout-btn {
   border: none;

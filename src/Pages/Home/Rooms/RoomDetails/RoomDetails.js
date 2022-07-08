@@ -19,7 +19,7 @@ const RoomDetails = () => {
 
   return (
     <>
-      <Container className="my-5">
+      <Container className="my-5 pt-3">
         <div className="row">
           <div className="col-12">
             <div className="room-img">

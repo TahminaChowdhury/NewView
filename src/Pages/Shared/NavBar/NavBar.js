@@ -17,9 +17,18 @@ const NavBar = () => {
   };
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar
+        collapseOnSelect
+        fixed="top"
+        expand="lg"
+        bg="dark"
+        variant="dark"
+        className="py-3"
+      >
         <Container>
-          <Navbar.Brand href="#home" className='brand-name'>THE NEW VIEW</Navbar.Brand>
+          <Navbar.Brand href="#home" className="brand-name">
+            𝐓𝐡𝐞 𝐍𝐞𝐰 𝐕𝐢𝐞𝐰
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto nav">

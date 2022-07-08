@@ -12,7 +12,7 @@ const Banner = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
   return (
-    <div>
+    <div className='mt-5'>
       <div className="banner">
         <Carousel>
           <Carousel.Item interval={1000}>

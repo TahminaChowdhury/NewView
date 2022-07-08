@@ -22,14 +22,13 @@ const AboutUs = () => {
               reviews. At the end of the day, you want to give your guests the
               perfect experience, and that begins with winning the right ones
               over.
-              <p/>
-              <p className="mt-5">
-                There may be nothing wrong with anything you do, but will a
-                family care about heated bathroom floors if there are no
-                parenting facilities? Setting expectations and marketing
-                effectively is a crucial first step to your hotel amenities
-                being a successful feature of your property.
-              </p>
+            </p>
+            <p className="mt-5">
+              There may be nothing wrong with anything you do, but will a family
+              care about heated bathroom floors if there are no parenting
+              facilities? Setting expectations and marketing effectively is a
+              crucial first step to your hotel amenities being a successful
+              feature of your property.
             </p>
             <div className="row my-5 text-center">
               <div className="col-sm-4 col-md-4">

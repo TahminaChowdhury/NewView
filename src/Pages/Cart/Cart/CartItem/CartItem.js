@@ -16,19 +16,21 @@ const CartItem = ({ bookings, qtyChangeHandler, removeFromCartHandler }) => {
   } = bookings;
   return (
     <div className="bookings my-4 py-3">
-      <div>
+      <div className='booking-img'>
         <img src={img} className="img-fluid" alt="" />
       </div>
 
       <div>
         <p className="mb-4 room-name">{name}</p>
-        <p className="details">
+        <p className="details booking-info">
           Reservation: {checkInDate}, {checkOutDate}
         </p>
-        <p className="details">Guests: {adults} </p>
+        <p className="details booking-info">Guests: {adults} </p>
       </div>
+
       <div>{price}</div>
-      <div>
+
+      {/* <div>
         <select
           value={qty}
           onChange={(e) => qtyChangeHandler(id, e.target.value)}
@@ -39,7 +41,7 @@ const CartItem = ({ bookings, qtyChangeHandler, removeFromCartHandler }) => {
             </option>
           ))}
         </select>
-      </div>
+      </div> */}
 
       <div>
         <button
@@ -49,6 +51,7 @@ const CartItem = ({ bookings, qtyChangeHandler, removeFromCartHandler }) => {
           <TiDelete />
         </button>
       </div>
+
     </div>
   );
 };

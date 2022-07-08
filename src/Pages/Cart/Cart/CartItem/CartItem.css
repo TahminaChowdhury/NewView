@@ -27,3 +27,11 @@
   font-size: 17px;
 }
 
+@media (max-width: 500px) {
+  .booking-img{
+    display: none;
+  }
+  .booking-info{
+    display: none;
+  }
+}
