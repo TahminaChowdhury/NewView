@@ -38,6 +38,7 @@ const BookingForm = (props) => {
               <span>
                 <input
                   type="date"
+                  min={new Date().toISOString().split('T')[0]}
                   {...register('checkInDate')}
                   className="input-field"
                 />
@@ -51,6 +52,7 @@ const BookingForm = (props) => {
               <span>
                 <input
                   type="date"
+                  min={new Date().toISOString().split('T')[0]}
                   {...register('checkOutDate')}
                   className="input-field"
                 />

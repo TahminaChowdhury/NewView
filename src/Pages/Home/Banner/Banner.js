@@ -12,7 +12,7 @@ const Banner = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
   return (
-    <div className='mt-5'>
+    <div className="mt-5">
       <div className="banner">
         <Carousel>
           <Carousel.Item interval={1000}>
@@ -21,9 +21,11 @@ const Banner = () => {
               src={img1}
               alt="First slide"
             />
-            {/* <Carousel.Caption className='carousel-caption'>
-                        
-                    </Carousel.Caption> */}
+            {/* <Carousel.Caption className="carousel-caption">
+              <h2>Make</h2>
+              <h2>yourself at</h2>
+              <h2>home</h2>
+            </Carousel.Caption> */}
           </Carousel.Item>
           <Carousel.Item interval={1000}>
             <img
@@ -41,6 +43,8 @@ const Banner = () => {
           </Carousel.Item>
         </Carousel>
       </div>
+      
+      {/* Booking form */}
       <div className="mx-5">
         <div className="">
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -50,7 +54,11 @@ const Banner = () => {
                   Check-in-Date
                   <br />
                   <span>
-                    <input type="date" {...register('check-in-date')} />
+                    <input
+                      type="date"
+                      {...register('check-in-date')}
+                      min={new Date().toISOString().split('T')[0]}
+                    />
                   </span>
                 </label>
               </div>
@@ -59,7 +67,11 @@ const Banner = () => {
                   Check-out-Date
                   <br />
                   <span>
-                    <input type="date" {...register('check-out-date')} />
+                    <input
+                      type="date"
+                      {...register('check-out-date')}
+                      min={new Date().toISOString().split('T')[0]}
+                    />
                   </span>
                 </label>
               </div>

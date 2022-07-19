@@ -54,7 +54,7 @@ const NavBar = () => {
                   />
                 </div>
               ) : (
-                <Link className="login-link text-dark" to="/login">
+                <Link className="login-link text-white" to="/login">
                   <FaUserAlt />
                 </Link>
               )}

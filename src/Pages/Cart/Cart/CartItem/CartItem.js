@@ -5,18 +5,18 @@ import { TiDelete } from 'react-icons/ti';
 const CartItem = ({ bookings, qtyChangeHandler, removeFromCartHandler }) => {
   const {
     id,
-    name,
     img,
+    name,
     price,
-    qty,
-    availableRoom,
     checkInDate,
     checkOutDate,
     adults,
+    availableRoom,
+    qty,
   } = bookings;
   return (
     <div className="bookings my-4 py-3">
-      <div className='booking-img'>
+      <div className="booking-img">
         <img src={img} className="img-fluid" alt="" />
       </div>
 
@@ -29,8 +29,8 @@ const CartItem = ({ bookings, qtyChangeHandler, removeFromCartHandler }) => {
       </div>
 
       <div>{price}</div>
-
-      {/* <div>
+      {/* 
+      <div>
         <select
           value={qty}
           onChange={(e) => qtyChangeHandler(id, e.target.value)}
@@ -51,7 +51,6 @@ const CartItem = ({ bookings, qtyChangeHandler, removeFromCartHandler }) => {
           <TiDelete />
         </button>
       </div>
-
     </div>
   );
 };
