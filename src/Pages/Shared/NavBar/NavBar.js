@@ -27,7 +27,7 @@ const NavBar = () => {
       >
         <Container>
           <Navbar.Brand href="#home" className="brand-name">
-            𝐓𝐡𝐞 𝐍𝐞𝐰 𝐕𝐢𝐞𝐰
+           The New View
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">

@@ -17,10 +17,7 @@ const BookingForm = (props) => {
     dispatch(
       addToCart(
         id,
-        data.checkInDate,
-        data.checkOutDate,
-        data.adults,
-        data.children,
+        data,
         qty
       )
     );

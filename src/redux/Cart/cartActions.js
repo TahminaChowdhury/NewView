@@ -2,7 +2,7 @@ import * as actionTypes from './cartConstants';
 import axios from 'axios';
 
 export const addToCart =
-  (id, checkInDate, checkOutDate, adults, children, qty) =>
+  (id, bookingInfo, qty) =>
   async (dispatch, getState) => {
     const { data } = await axios.get(
       `https://stark-island-71268.herokuapp.com/rooms/${id}`
@@ -15,10 +15,10 @@ export const addToCart =
         img: data.img,
         name: data.name,
         price: data.price,
-        checkInDate: checkInDate,
-        checkOutDate: checkOutDate,
-        adults: adults,
-        children: children,
+        checkInDate: bookingInfo.checkInDate,
+        checkOutDate: bookingInfo.checkOutDate,
+        adults: bookingInfo.adults,
+        children: bookingInfo.children,
         availableRoom: data.availableRoom,
         qty,
       },
