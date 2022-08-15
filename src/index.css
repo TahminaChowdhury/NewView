@@ -2,7 +2,7 @@
   --primary: #01937C;
   --secondary: #F5F5F5;
   --light: #fff;
-  --dark: rgba(0, 0, 0, .18);
+  --dark: #000;
 }
 
 * {

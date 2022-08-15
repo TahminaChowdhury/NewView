@@ -74,5 +74,6 @@
     }
     .bookingform-container{
         display: contents;
+        position: fixed;
     }
 }

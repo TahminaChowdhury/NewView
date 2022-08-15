@@ -30,7 +30,7 @@ const CartItem = ({ bookings, qtyChangeHandler, removeFromCartHandler }) => {
 
       <div>{price}</div>
       
-      <div>
+      {/* <div>
         <select
           value={qty}
           onChange={(e) => qtyChangeHandler(id, e.target.value)}
@@ -41,7 +41,7 @@ const CartItem = ({ bookings, qtyChangeHandler, removeFromCartHandler }) => {
             </option>
           ))}
         </select>
-      </div>
+      </div> */}
 
       <div>
         <button

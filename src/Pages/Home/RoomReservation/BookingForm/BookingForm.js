@@ -17,8 +17,8 @@ const BookingForm = (props) => {
     dispatch(
       addToCart(
         id,
-        data,
-        qty
+        qty,
+        data
       )
     );
     navigate('/cart');
