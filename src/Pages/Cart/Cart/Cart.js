@@ -29,10 +29,7 @@ const Cart = () => {
 
   // Cart subtotal count
   const getCartSubtotal = () => {
-    return cartItems.reduce(
-      (price, item) => (item.price * item.qty) + price,
-      0
-    );
+    return cartItems.reduce((price, item) => item.price * item.qty + price, 0);
   };
 
   return (

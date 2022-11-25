@@ -15,7 +15,35 @@ const Reviews = () => {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
               dicta similique, quibusdam veritatis fuga expedita ab earum.
             </p>
+            <h5 className="review-name">No name</h5>
+            <h6>Bangladesh</h6>
+          </div>
+        </div>
+      </div>
+      <div className="col-sm-12 col-md-4">
+        <div className="review-section">
+          <div>
+            <img src={img} className="img-fluid" alt="" />
+            <p className='pt-4'>*****</p>
+            <p className="pb-3">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
+              dicta similique, quibusdam veritatis fuga expedita ab earum.
+            </p>
             <h5 className="review-name">Tahmina Chowdhury</h5>
+            <h6>Bangladesh</h6>
+          </div>
+        </div>
+      </div>
+      <div className="col-sm-12 col-md-4">
+        <div className="review-section">
+          <div>
+            <img src={img} className="img-fluid" alt="" />
+            <p className='pt-4'>*****</p>
+            <p className="pb-3">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
+              dicta similique, quibusdam veritatis fuga expedita ab earum.
+            </p>
+            <h5 className="review-name">Rose Honey</h5>
             <h6>Bangladesh</h6>
           </div>
         </div>

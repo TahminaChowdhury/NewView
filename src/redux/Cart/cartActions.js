@@ -4,7 +4,7 @@ import axios from 'axios';
 export const addToCart =
   (id, qty, bookingInfo) => async (dispatch, getState) => {
     const { data } = await axios.get(
-      `https://stark-island-71268.herokuapp.com/rooms/${id}`
+      `https://the-new-view.up.railway.app/rooms/${id}`
     );
 
     dispatch({

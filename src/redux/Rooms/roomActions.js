@@ -7,7 +7,7 @@ export const getRooms = () => async (dispatch) => {
       type: actionType.GET_ROOMS_REQUEST,
     });
     const {data} = await axios.get(
-      'https://stark-island-71268.herokuapp.com/rooms'
+      'https://the-new-view.up.railway.app/rooms'
     );
 
     dispatch({
@@ -31,7 +31,7 @@ export const getRoomDetails = (id) => async (dispatch) => {
       type: actionType.GET_ROOM_DETAILS_REQUEST,
     });
     const {data} = await axios.get(
-      `https://stark-island-71268.herokuapp.com/rooms/${id}`
+      `https://the-new-view.up.railway.app/rooms/${id}`
     );
 
     dispatch({

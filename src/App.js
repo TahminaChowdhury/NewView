@@ -15,9 +15,8 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Cart from './Pages/Cart/Cart/Cart';
 import CheckOut from './Pages/Cart/CheckOut/CheckOut';
 import AboutUs from './Pages/Home/AboutUs/AboutUs';
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import DotLoader from 'react-spinners/DotLoader';
-
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -31,8 +30,8 @@ function App() {
     <>
       {loading ? (
         <div
-        className='d-flex justify-content-center'
-        style={{marginTop: '270px'}}
+          className="d-flex justify-content-center align-items-center"
+          style={{ marginTop: '270px' }}
         >
           <DotLoader loading={loading} size={70} />
         </div>

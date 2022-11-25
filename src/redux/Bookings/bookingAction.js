@@ -9,7 +9,7 @@ export const postBooking = (request) => async (dispatch) => {
   });
 
   const { data } = await axios.post(
-    'https://stark-island-71268.herokuapp.com/bookings',
+    'https://the-new-view.up.railway.app/bookings',
     request
   );
   dispatch({
@@ -26,7 +26,7 @@ export const getBookings = () => async (dispatch) => {
     });
 
     const { data } = await axios.get(
-      'https://stark-island-71268.herokuapp.com/bookings'
+      'https://the-new-view.up.railway.app/bookings'
     );
     dispatch({
       type: actionTypes.GET_BOOKINGS_SUCCESS,

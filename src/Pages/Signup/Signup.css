@@ -1,0 +1,13 @@
+.signup-form-content {
+  background-color: white;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-radius: 20px;
+  margin: 80px 0px 50px 0px;
+  width: 400px;
+  height: 720px;
+}
+
+.signup-form-content a {
+  text-decoration: none;
+  color: #01937c;
+}

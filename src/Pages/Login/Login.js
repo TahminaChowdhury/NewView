@@ -32,7 +32,7 @@ const Login = () => {
                 <h3 className="text-center">Login</h3>
               </div>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="form-email-input mt-3">
+                <div className="form-email-input mt-3 mb-4">
                   <input
                     type="email"
                     name="email"
