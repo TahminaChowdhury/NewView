@@ -9,7 +9,7 @@ export const postBooking = (request) => async (dispatch) => {
   });
 
   const { data } = await axios.post(
-    'https://the-new-view.up.railway.app/bookings',
+    'https://the-new-view.vercel.app/bookings',
     request
   );
   dispatch({
