@@ -4,7 +4,7 @@ import axios from 'axios';
 export const addToCart =
   (id, qty, bookingInfo) => async (dispatch, getState) => {
     const { data } = await axios.get(
-      `https://the-new-view.vercel.app/rooms/${id}`
+      `https://the-new-view.onrender.com/rooms/${id}`
     );
 
     dispatch({

@@ -9,7 +9,7 @@ export const postBooking = (request) => async (dispatch) => {
   });
 
   const { data } = await axios.post(
-    'https://the-new-view.vercel.app/bookings',
+    'https://the-new-view.onrender.com/bookings',
     request
   );
   dispatch({
@@ -26,7 +26,7 @@ export const getBookings = () => async (dispatch) => {
     });
 
     const { data } = await axios.get(
-      'https://the-new-view.up.railway.app/bookings'
+      'https://the-new-view.onrender.com/bookings'
     );
     dispatch({
       type: actionTypes.GET_BOOKINGS_SUCCESS,

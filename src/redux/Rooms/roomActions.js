@@ -6,7 +6,7 @@ export const getRooms = () => async (dispatch) => {
     dispatch({
       type: actionType.GET_ROOMS_REQUEST,
     });
-    const { data } = await axios.get('https://the-new-view.vercel.app/rooms');
+    const { data } = await axios.get('https://the-new-view.onrender.com/rooms');
 
     dispatch({
       type: actionType.GET_ROOMS_SUCCESS,
@@ -29,7 +29,7 @@ export const getRoomDetails = (id) => async (dispatch) => {
       type: actionType.GET_ROOM_DETAILS_REQUEST,
     });
     const { data } = await axios.get(
-      `https://the-new-view.vercel.app/rooms/${id}`
+      `https://the-new-view.onrender.com/rooms/${id}`
     );
 
     dispatch({
